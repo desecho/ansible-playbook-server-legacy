@@ -18,25 +18,21 @@
 - name: Set US/Eastern timezone
   command: timedatectl set-timezone US/Eastern
 
-# - name: Ensure packages required for bower installation are present
-#   apt: name={{ item }} state=latest
-#   with_items:
-#     - nodejs
-#     - npm
-#     - nodejs-legacy
+- name: Ensure packages required for bower installation are present
+  apt: name={{ item }} state=latest
+  with_items:
+    - npm
 
-#description: Install "bower" node.js package globally.
-- npm:
-    name: bower
-    global: yes
+- name: Install "bower" node.js package globally.
+  npm: name=bower global=yes
 
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
 
-- name: Do we have ssh key?
-  stat: path="{{ ssh_key_path }}"
-  register: ssh_key_stat
+# - name: Do we have ssh key?
+#   stat: path="{{ ssh_key_path }}"
+#   register: ssh_key_stat
 
-- name: Generate key
-  command: "ssh-keygen -t rsa -C {{ email }} -f {{ ssh_key_path }} -N ''"
-  when: not ssh_key_stat.stat.exists
+# - name: Generate key
+#   command: "ssh-keygen -t rsa -C {{ email }} -f {{ ssh_key_path }} -N ''"
+#   when: not ssh_key_stat.stat.exists

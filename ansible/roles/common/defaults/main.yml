@@ -6,4 +6,4 @@ common_required_packages:
   - git
   - python-tox
 
-ssh_key_path: "/home/{{ user }}/.ssh/id_rsa"
+# ssh_key_path: "/home/{{ user }}/.ssh/id_rsa"
