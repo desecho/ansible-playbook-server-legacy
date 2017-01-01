@@ -1,0 +1,9 @@
+---
+common_required_packages:
+  - rsync
+  - sudo
+  - build-essential
+  - git
+  - python-tox
+
+ssh_key_path: "/home/{{ user }}/.ssh/id_rsa"

@@ -1,0 +1,11 @@
+- name: Install a fully functional Uwsgi/nginx server for Django deployment
+  hosts: localhost
+
+  pre_tasks:
+    - include_vars: vars.yml
+  roles:
+    - common
+    - nginx
+    - mysql
+    #- django
+    #- nginx-acme

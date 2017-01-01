@@ -1,0 +1,31 @@
+---
+- name: apt-get update/upgrade
+  apt: update_cache=yes upgrade=yes cache_valid_time=3600
+
+- name: Ensure required packages are present
+  apt: "name={{ item }} state=present"
+  with_items: "{{ common_required_packages }}"
+
+- name: Set US/Eastern timezone
+  command: timedatectl set-timezone US/Eastern
+
+- name: Ensure packages required for bower installation are present
+  apt: name={{ item }} state=latest
+  with_items:
+    - nodejs
+    - npm
+    - nodejs-legacy
+
+- name: Install bower
+  command: "npm install bower -g"
+
+- name: Fix locale
+  command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
+
+- name: Do we have ssh key?
+  stat: path="{{ ssh_key_path }}"
+  register: ssh_key_stat
+
+- name: Generate key
+  command: "ssh-keygen -t rsa -C {{ email }} -f {{ ssh_key_path }} -N ''"
+  when: not ssh_key_stat.stat.exists

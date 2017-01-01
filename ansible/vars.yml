@@ -1,0 +1,14 @@
+mysql_root_password:
+email: 
+user: vagrant
+
+django_name: 
+django_domain_name: 
+
+django_debug: yes
+django_user: vagrant
+django_project_symlink_dest: ""
+
+django_dbpass: whatever
+django_secret_key: whatever
+
