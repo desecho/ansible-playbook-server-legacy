@@ -1,4 +1,13 @@
 ---
+# Ansible's apt module requires aptitude and python-apt. The two tasks below fix that.
+- name: Do we have aptitude?
+  stat: path=/usr/bin/aptitude
+  register: aptitude_stat
+
+- name: Ensure that requirements for the apt action are present
+  shell: "apt-get update && apt-get install -y python-apt aptitude"
+  when: not aptitude_stat.stat.exists
+
 - name: apt-get update/upgrade
   apt: update_cache=yes upgrade=yes cache_valid_time=3600
 
@@ -9,15 +18,17 @@
 - name: Set US/Eastern timezone
   command: timedatectl set-timezone US/Eastern
 
-- name: Ensure packages required for bower installation are present
-  apt: name={{ item }} state=latest
-  with_items:
-    - nodejs
-    - npm
-    - nodejs-legacy
+# - name: Ensure packages required for bower installation are present
+#   apt: name={{ item }} state=latest
+#   with_items:
+#     - nodejs
+#     - npm
+#     - nodejs-legacy
 
-- name: Install bower
-  command: "npm install bower -g"
+#description: Install "bower" node.js package globally.
+- npm:
+    name: bower
+    global: yes
 
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"

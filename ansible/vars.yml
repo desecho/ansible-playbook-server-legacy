@@ -1,14 +1,15 @@
-mysql_root_password:
-email: 
-user: vagrant
+email: desecho@gmail.com
+user: ubuntu
 
-django_name: 
-django_domain_name: 
+mysql_root_password: password
+mysql_user_password: "{{ mysql_root_password }}"
+
+django_name: project
+django_domain_name: project.local
 
 django_debug: yes
-django_user: vagrant
-django_project_symlink_dest: ""
+django_user: root
+django_project_symlink_dest: "/vagrant/project"
 
-django_dbpass: whatever
-django_secret_key: whatever
-
+django_dbpass: password
+django_secret_key: key

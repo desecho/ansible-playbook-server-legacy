@@ -5,7 +5,8 @@
     - include_vars: vars.yml
   roles:
     - common
+    - role: mysql
+      become: yes
     - nginx
-    - mysql
     #- django
     #- nginx-acme
