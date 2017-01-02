@@ -15,5 +15,7 @@ django_secret_key: key
 mysql_databases:
   - { name: "{{ django_name }}" }
 
+nginx_delete_default_site: yes
+nginx_catchall_enable: no
 acme_domains:
   - "{{ django_domain_name }}"
