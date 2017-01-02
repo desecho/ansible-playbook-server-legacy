@@ -7,3 +7,6 @@
 [submodule "ansible/roles/acme-nginx"]
 	path = ansible/roles/acme-nginx
 	url = git@github.com:hsoft/ansible-acme-nginx.git
+[submodule "ansible/ansible/roles/django"]
+	path = ansible/ansible/roles/django
+	url = git@github.com:desecho/ansible-django.git
