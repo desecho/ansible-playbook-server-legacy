@@ -1,6 +1,3 @@
-[submodule "ansible/roles/django"]
-	path = ansible/roles/django
-	url = git@github.com:savoirfairelinux/ansible-django.git
 [submodule "ansible/roles/mysql"]
 	path = ansible/roles/mysql
 	url = git@github.com:geerlingguy/ansible-role-mysql.git

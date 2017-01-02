@@ -8,5 +8,5 @@
     - role: mysql
       become: yes
     - nginx
-    #- django
-    #- nginx-acme
+    # - django
+    # - nginx-acme

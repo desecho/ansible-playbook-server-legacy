@@ -4,11 +4,16 @@ mysql_root_password: password
 mysql_user_password: "{{ mysql_root_password }}"
 
 django_name: project
-django_domain_name: project.local
-
+django_domain_name: "{{ django_name }}.local"
+django_project_symlink_dest: "/vagrant/{{ django_name }}"
 django_debug: yes
 django_user: root
-django_project_symlink_dest: "/vagrant/project"
-
+django_dbtype: mariadb
+django_ispython3: no
 django_dbpass: password
 django_secret_key: key
+mysql_databases:
+  - { name: "{{ django_name }}" }
+
+acme_domains:
+  - "{{ django_domain_name }}"

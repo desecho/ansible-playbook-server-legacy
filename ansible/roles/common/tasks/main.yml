@@ -26,6 +26,11 @@
 - name: Install "bower" node.js package globally.
   npm: name=bower global=yes
 
+- name: Ensure package necessary to run bower exists
+  apt: name={{ item }} state=latest
+  with_items:
+    - nodejs-legacy
+
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
 
