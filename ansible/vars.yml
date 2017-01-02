@@ -10,7 +10,7 @@ django_debug: yes
 django_user: root
 django_dbtype: mariadb
 django_ispython3: no
-django_dbpass: password
+django_dbpass: "{{ mysql_root_password }}"
 django_secret_key: key
 mysql_databases:
   - { name: "{{ django_name }}" }
