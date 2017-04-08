@@ -1,4 +1,4 @@
-# ansible-playbook-custom
+# ansible-playbook-server
 A Custom Ansible Playbook to setup a django/nginx/uwsgi/mysql server
 
 How to use:
