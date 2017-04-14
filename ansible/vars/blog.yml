@@ -1,0 +1,5 @@
+name: blog.desecho.org
+domain_name: blog
+
+acme_domains:
+  - "{{ domain_name }}"

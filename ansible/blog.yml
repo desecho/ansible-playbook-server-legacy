@@ -1,0 +1,10 @@
+- name: Install a fully functional nginx server
+  hosts: localhost
+
+  vars_files:
+      - vars/blog.yml
+
+  roles:
+    - common
+    - nginx
+    - server

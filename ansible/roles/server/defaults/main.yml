@@ -1,0 +1,3 @@
+# If set, our nginx config will only answer to HTTPS requests, ignoring requests on port 80.
+ssl_only: no
+disallow_robots: no

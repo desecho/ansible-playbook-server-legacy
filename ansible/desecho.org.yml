@@ -1,0 +1,11 @@
+- name: Install a fully functional nginx server
+  hosts: localhost
+
+  vars_files:
+      - vars/desecho.org.yml
+
+  roles:
+    - common
+    - nginx
+    - acme-nginx
+    - server

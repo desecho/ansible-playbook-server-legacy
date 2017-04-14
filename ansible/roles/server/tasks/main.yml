@@ -1,0 +1,20 @@
+- name: Check if SSL config is there
+  stat: path="/etc/nginx/snippets/{{ domain_name }}.ssl.conf"
+  register: ssl_config_file
+
+- name: Check if acme_well_known config is there
+  stat: path="/etc/nginx/snippets/acme_well_known.conf"
+  register: acme_well_known_config_file
+
+- name: Create nginx sites config
+  template: src=nginx.conf dest=/etc/nginx/sites-available/{{ domain_name }}.conf
+  notify:
+    - nginx restart
+
+- name: Create symbolic links for sites config to enable sites
+  file:
+    path: "/etc/nginx/sites-enabled/{{ domain_name }}.conf"
+    state: link
+    src: "/etc/nginx/sites-available/{{ domain_name }}.conf"
+  notify:
+    - nginx restart
