@@ -1,5 +1,2 @@
 name: desecho.org
 domain_name: "{{ name }}"
-
-acme_domains:
-  - "{{ domain_name }}"

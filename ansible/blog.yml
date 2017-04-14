@@ -3,6 +3,7 @@
 
   vars_files:
       - vars/blog.yml
+      - vars/common.yml
 
   roles:
     - common

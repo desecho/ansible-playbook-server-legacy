@@ -3,6 +3,7 @@
 
   vars_files:
       - vars/desecho.org.yml
+      - vars/common.yml
 
   roles:
     - common

@@ -2,6 +2,5 @@ django_domain_name: "{{ django_name }}.local"
 django_project_symlink_dest: "/vagrant/{{ django_name }}"
 django_debug: yes
 nginx_catchall_enable: no
-
 mysql_root_password: password
 django_secret_key: key
