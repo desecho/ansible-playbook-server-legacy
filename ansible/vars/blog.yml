@@ -1,5 +1,5 @@
-name: blog.desecho.org
-domain_name: blog
+name: blog
+domain_name: "{{ name }}.desecho.org"
 
 acme_domains:
   - "{{ domain_name }}"
