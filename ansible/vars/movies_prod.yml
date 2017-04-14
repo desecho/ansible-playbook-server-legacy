@@ -1,0 +1,7 @@
+django_domain_name: "{{ django_name }}.desecho.org"
+django_project_symlink_dest: "/root/{{ django_name }}"
+django_debug: no
+nginx_catchall_enable: yes
+
+acme_domains:
+  - "{{ django_domain_name }}"

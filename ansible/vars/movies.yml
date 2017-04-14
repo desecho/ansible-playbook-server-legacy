@@ -1,0 +1,20 @@
+email: desecho@gmail.com
+mysql_user_password: "{{ mysql_root_password }}"
+# django_fixtures_to_load:
+#   - moviesapp/fixtures/lists.json
+django_name: movies
+django_user: root
+django_dbtype: mariadb
+django_ispython3: no
+django_dbpass: "{{ mysql_root_password }}"
+mysql_databases:
+  - { name: "{{ django_name }}" }
+nginx_delete_default_site: yes
+django_env_settings_extra: |
+  SOCIAL_AUTH_VK_APP_KEY = '{{ vk_app_key }}'
+  SOCIAL_AUTH_VK_APP_SECRET = '{{ vk_app_secret }}'
+
+  SOCIAL_AUTH_VK_OAUTH2_KEY = '{{ vk_oauth2_key }}'
+  SOCIAL_AUTH_VK_OAUTH2_SECRET = '{{ vk_oauth2_secret }}'
+
+  TMDB_KEY = '{{ tmdb_key }}'

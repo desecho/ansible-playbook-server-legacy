@@ -34,6 +34,10 @@
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
 
+- name: Install ansible-vault
+  pip:
+    name: ansible-vault
+
 # - name: Do we have ssh key?
 #   stat: path="{{ ssh_key_path }}"
 #   register: ssh_key_stat

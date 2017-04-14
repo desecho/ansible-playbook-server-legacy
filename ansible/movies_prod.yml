@@ -1,0 +1,15 @@
+- name: Install a fully functional uWSGI/nginx server for Django deployment
+  hosts: localhost
+
+  vars_files:
+      - vars/movies_prod_secrets.yml
+      - vars/movies.yml
+      - vars/movies_prod.yml
+
+  roles:
+    - common
+    - role: mysql
+      become: yes
+    - nginx
+    - acme-nginx
+    - django
