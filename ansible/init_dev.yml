@@ -1,4 +1,4 @@
-- name: Initialize nginx server for development
+- name: Initialize ubuntu machine for development
   hosts: localhost
 
   vars_files:
