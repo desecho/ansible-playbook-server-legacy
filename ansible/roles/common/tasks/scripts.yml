@@ -21,9 +21,8 @@
 - name: Generate scripts for production
   template:
     src: "{{ item }}"
-    dest: "{{ home }}/scripts/{{ item }}"
+    dest: "{{ home }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "mysql_backup.sh"
-    - "google_drive_backup.sh"
+    - "restart.sh"
   when: is_prod
