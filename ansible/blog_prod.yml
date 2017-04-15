@@ -3,6 +3,7 @@
 
   vars_files:
       - vars/blog_prod.yml
+      - vars/prod.yml
       - vars/site.yml
 
   roles:
