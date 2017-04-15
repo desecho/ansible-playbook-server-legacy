@@ -2,6 +2,7 @@ mysql_user_password: "{{ mysql_root_password }}"
 django_fixtures_to_load:
   - moviesapp/fixtures/lists.json
 django_name: movies
+django_project_name: "{{ django_name }}"
 django_env_settings_extra: |
   SOCIAL_AUTH_VK_APP_KEY = '{{ vk_app_key }}'
   SOCIAL_AUTH_VK_APP_SECRET = '{{ vk_app_secret }}'
