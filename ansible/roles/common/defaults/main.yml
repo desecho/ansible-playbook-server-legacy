@@ -4,11 +4,13 @@ common_required_packages:
   - sudo
   - build-essential
   - git
-  - python-tox
   - python-pip  # for ansible-vault
   - ntp
   - npm  # for bower
   - nodejs-legacy  # for bower
+
+# Packages to install in addition to `common_required_packages`
+common_extra_packages: []
 
 common_enabled_services:
   - ntp

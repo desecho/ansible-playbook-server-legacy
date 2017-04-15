@@ -4,6 +4,7 @@
   vars_files:
       - vars/init.yml
       - vars/dev.yml
+      - vars/init_dev.yml
 
   roles:
     - common

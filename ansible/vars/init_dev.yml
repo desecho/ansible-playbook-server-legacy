@@ -1,0 +1,3 @@
+common_extra_packages:
+  - python-tox
+  - isort
