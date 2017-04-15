@@ -16,6 +16,7 @@
   with_items:
     - "develop.sh"
     - "tox.sh"
+    - "isort.sh"
   when: is_dev
 
 - name: Generate scripts for production
