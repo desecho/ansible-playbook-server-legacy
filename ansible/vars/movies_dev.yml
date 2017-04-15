@@ -5,3 +5,5 @@ mysql_root_password: password
 django_secret_key: key
 django_app_name: moviesapp
 django_create_uwsgi_config: no
+
+raven_dsn: ''

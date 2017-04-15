@@ -10,3 +10,4 @@ django_env_settings_extra: |
   SOCIAL_AUTH_VK_OAUTH2_SECRET = '{{ vk_oauth2_secret }}'
 
   TMDB_KEY = '{{ tmdb_key }}'
+  RAVEN_DSN = '{{ raven_dsn }}'
