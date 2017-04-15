@@ -1,4 +1,4 @@
 django_domain_name: "{{ django_name }}.desecho.org"
 django_project_symlink_dest: "/root/{{ django_name }}"
 django_debug: no
-domain_name: {{ django_domain_name }}
+domain_name: "{{ django_domain_name }}"
