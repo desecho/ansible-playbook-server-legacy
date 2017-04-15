@@ -1,11 +1,10 @@
-- name: Install desecho.org
+- name: Install blog.desecho.org
   hosts: localhost
 
   vars_files:
-      - vars/desecho.org.yml
+      - vars/blog_prod.yml
       - vars/site.yml
 
   roles:
     - acme-nginx
     - nginx-site
-    - desecho.org

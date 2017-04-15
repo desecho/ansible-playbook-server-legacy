@@ -1,0 +1,5 @@
+- name: Create cache directory
+  file: path={{ path }} state=directory owner=root group=root
+
+- name: Create cache file
+  file: path={{ path }}/tmdb3.cache state=touch owner=root group=root mode=0777

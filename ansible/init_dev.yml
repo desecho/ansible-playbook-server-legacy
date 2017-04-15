@@ -1,0 +1,9 @@
+- name: Initialize nginx server for development
+  hosts: localhost
+
+  vars_files:
+      - vars/init.yml
+      - vars/dev.yml
+
+  roles:
+    - common

@@ -5,6 +5,16 @@ common_required_packages:
   - build-essential
   - git
   - python-tox
-  - python-pip
+  - python-pip  # for ansible-vault
+  - ntp
+  - npm  # for bower
+  - nodejs-legacy  # for bower
+
+common_enabled_services:
+  - ntp
+
+is_dev: no
+is_prod: no
+timezone: US/Eastern
 
 # ssh_key_path: "/home/{{ user }}/.ssh/id_rsa"

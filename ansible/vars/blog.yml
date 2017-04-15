@@ -1,2 +1,0 @@
-name: blog
-domain_name: "{{ name }}.desecho.org"

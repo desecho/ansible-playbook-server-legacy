@@ -1,0 +1,2 @@
+- name: Create deployment script
+  template: src=deploy_site.sh dest={{ home }}/deploy_{{ site_name }}.conf

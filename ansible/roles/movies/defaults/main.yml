@@ -1,0 +1,1 @@
+path: "/opt/{{ django_name }}/cache"

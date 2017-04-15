@@ -1,0 +1,26 @@
+- name: Generate cron scripts
+  template:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "mysql_backup.sh"
+    - "google_drive_backup.sh"
+
+- name: Ensure that we have a cron job for mysql backup
+  cron:
+    name: mysql_backup
+    minute: 0
+    hour: 3
+    state: present
+    user: root
+    job: "{{ home }}/mysql_backup.sh"
+
+- name: Ensure that we have a cron job for google drive backup
+  cron:
+    name: google_drive_backup
+    minute: 0
+    hour: 4
+    state: present
+    user: root
+    job: "{{ home }}/google_drive_backup.sh"

@@ -7,14 +7,14 @@
   register: acme_well_known_config_file
 
 - name: Create nginx sites config
-  template: src=nginx.conf dest=/etc/nginx/sites-available/{{ name }}.conf
+  template: src=nginx.conf dest=/etc/nginx/sites-available/{{ site_name }}.conf
   notify:
     - nginx restart
 
 - name: Create symbolic links for sites config to enable sites
   file:
-    path: "/etc/nginx/sites-enabled/{{ name }}.conf"
+    path: "/etc/nginx/sites-enabled/{{ site_name }}.conf"
     state: link
-    src: "/etc/nginx/sites-available/{{ name }}.conf"
+    src: "/etc/nginx/sites-available/{{ site_name }}.conf"
   notify:
     - nginx restart

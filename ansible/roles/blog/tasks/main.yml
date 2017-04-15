@@ -1,0 +1,9 @@
+- name: Generate scripts
+  template:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "blog_deploy.sh"
+    - "blog_post.sh"
+    - "blog_preview.sh"

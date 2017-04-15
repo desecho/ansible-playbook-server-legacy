@@ -1,2 +1,2 @@
-name: desecho.org
-domain_name: "{{ name }}"
+site_name: desecho.org
+domain_name: "{{ site_name }}"

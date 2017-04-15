@@ -1,0 +1,23 @@
+---
+- name: "Generate configs"
+  template:
+    src: "{{ item }}"
+    dest: "/root/.{{ item }}"
+    owner: root
+    mode: u=rw,g=,o=
+  with_items:
+    - "bash_aliases"
+    - "bash_profile"
+    - "gitconfig"
+
+- name: "Generate configs for development"
+  template:
+    src: "{{ item }}"
+    dest: "/home/ubuntu/.{{ item }}"
+    owner: ubuntu
+    mode: u=rw,g=,o=
+  with_items:
+    - "bash_aliases"
+    - "bash_profile"
+    - "gitconfig"
+  when: is_dev

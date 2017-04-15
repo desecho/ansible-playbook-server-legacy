@@ -1,35 +1,15 @@
----
-# Ansible's apt module requires aptitude and python-apt. The two tasks below fix that.
-- name: Do we have aptitude?
-  stat: path=/usr/bin/aptitude
-  register: aptitude_stat
+- include: packages.yml
+- include: scripts.yml
+- include: configs.yml
 
-- name: Ensure that requirements for the apt action are present
-  shell: "apt-get update && apt-get install -y python-apt aptitude"
-  when: not aptitude_stat.stat.exists
+- include: cron.yml
+  when: is_prod
 
-- name: apt-get update/upgrade
-  apt: update_cache=yes upgrade=yes cache_valid_time=3600
-
-- name: Ensure required packages are present
-  apt: "name={{ item }} state=present"
-  with_items: "{{ common_required_packages }}"
-
-- name: Set US/Eastern timezone
-  command: timedatectl set-timezone US/Eastern
-
-- name: Ensure packages required for bower installation are present
-  apt: name={{ item }} state=latest
-  with_items:
-    - npm
+- name: Set timezone
+  command: "timedatectl set-timezone {{ timezone }}"
 
 - name: Install "bower" node.js package globally.
   npm: name=bower global=yes
-
-- name: Ensure package necessary to run bower exists
-  apt: name={{ item }} state=latest
-  with_items:
-    - nodejs-legacy
 
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
@@ -37,6 +17,14 @@
 - name: Install ansible-vault
   pip:
     name: ansible-vault
+
+- name: Ensure required services are enabled and running
+  service:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items: "{{ common_enabled_services }}"
+
 
 # - name: Do we have ssh key?
 #   stat: path="{{ ssh_key_path }}"

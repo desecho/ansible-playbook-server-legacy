@@ -1,0 +1,2 @@
+site_name: blog
+domain_name: "{{ site_name }}.desecho.org"

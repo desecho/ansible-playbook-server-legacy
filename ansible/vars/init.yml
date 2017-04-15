@@ -1,0 +1,6 @@
+email: desecho@gmail.com
+name: Anton Samarchyan
+
+nginx_delete_default_site: yes
+nginx_catchall_enable: yes
+nginx_catchall_redirects_to_https: no

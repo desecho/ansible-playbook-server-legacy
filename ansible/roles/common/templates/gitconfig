@@ -1,0 +1,12 @@
+[user]
+        name = {{ name }}
+        email = {{ email }}
+[color]
+        diff = always
+        ui = always
+[push]
+        default = simple
+[core]
+        editor = nano
+[pull]
+	rebase = true

@@ -1,15 +1,15 @@
-- name: Install a fully functional uWSGI/nginx server for Django deployment
+- name: Install a fully functional uWSGI/nginx server for Django deployment on development. Movies Project.
   hosts: localhost
 
   vars_files:
       - vars/movies_dev_secrets.yml
       - vars/movies.yml
       - vars/movies_dev.yml
-      - vars/common.yml
+      - vars/dev.yml
+      - vars/django.yml
 
   roles:
-    - common
     - role: mysql
       become: yes
-    - nginx
     - django
+    - movies

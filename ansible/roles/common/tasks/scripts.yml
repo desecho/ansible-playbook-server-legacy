@@ -1,0 +1,29 @@
+---
+- name: Generate scripts
+  template:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "deploy.sh"
+    - "manage.sh"
+
+- name: Generate scripts for development
+  template:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "develop.sh"
+    - "tox.sh"
+  when: is_dev
+
+- name: Generate scripts for production
+  template:
+    src: "{{ item }}"
+    dest: "{{ home }}/scripts/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "mysql_backup.sh"
+    - "google_drive_backup.sh"
+  when: is_prod

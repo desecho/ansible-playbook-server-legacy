@@ -1,0 +1,6 @@
+# Fix numeric keypad in nano
+alias nano='nano -K'
+
+alias upgrade='apt-get update && apt-get upgrade'
+alias bowerinstall='sudo bower install --allow-root'
+alias bowerlist='sudo bower list --allow-root'

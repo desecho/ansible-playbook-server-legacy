@@ -1,0 +1,10 @@
+- name: Initialize nginx server for production
+  hosts: localhost
+
+  vars_files:
+      - vars/init.yml
+      - vars/prod.yml
+
+  roles:
+    - common
+    - nginx

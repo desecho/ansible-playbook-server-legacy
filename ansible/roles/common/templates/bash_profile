@@ -1,0 +1,12 @@
+# Make ubuntu aliases work not only in console but also through ssh
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+# editor setup
+export GIT_EDITOR=nano
+export VISUAL=nano
+export EDITOR=nano
+
+# Include datetime in history command output
+export HISTTIMEFORMAT="%d/%m/%y %T "
