@@ -17,6 +17,8 @@
     - "develop.sh"
     - "tox.sh"
     - "isort.sh"
+    - "makemessages.sh"
+
   when: is_dev
 
 - name: Generate scripts for production
