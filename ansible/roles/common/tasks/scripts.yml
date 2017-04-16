@@ -26,4 +26,5 @@
     mode: u=rwx,g=,o=
   with_items:
     - "restart.sh"
+    - "debug.sh"
   when: is_prod

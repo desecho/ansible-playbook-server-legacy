@@ -13,3 +13,4 @@ django_env_settings_extra: |
   TMDB_KEY = '{{ tmdb_key }}'
   RAVEN_DSN = '{{ raven_dsn }}'
   HOST_MOVIES_TEST = 'moviestest.pagekite.me'
+  IS_VK_DEV = False
