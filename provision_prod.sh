@@ -2,4 +2,4 @@
 
 ./provision.sh movies_prod
 ./provision.sh desecho.org
-./provision.sh blog
+./provision.sh blog_prod
