@@ -8,6 +8,7 @@ common_required_packages:
   - ntp
   - npm  # for bower
   - nodejs-legacy  # for bower
+  - unattended-upgrades  # make sure we get security updates automatically
 
 # Packages to install in addition to `common_required_packages`
 common_extra_packages: []

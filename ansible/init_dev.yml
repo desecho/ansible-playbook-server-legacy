@@ -7,4 +7,5 @@
       - vars/init_dev.yml
 
   roles:
+    - swapfile
     - common

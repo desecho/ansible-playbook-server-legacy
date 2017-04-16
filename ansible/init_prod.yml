@@ -6,5 +6,7 @@
       - vars/prod.yml
 
   roles:
+    - swapfile
     - common
     - nginx
+    - fail2ban

@@ -6,12 +6,13 @@
   with_items:
     - "mysql_backup.sh"
     - "google_drive_backup.sh"
+    - "reboot_if_needed.sh"
 
 - name: Ensure that we have a cron job for mysql backup
   cron:
     name: mysql_backup
     minute: 0
-    hour: 3
+    hour: 1
     state: present
     user: root
     job: "{{ scripts_path }}/mysql_backup.sh"
@@ -20,7 +21,16 @@
   cron:
     name: google_drive_backup
     minute: 0
-    hour: 4
+    hour: 1
     state: present
     user: root
     job: "{{ scripts_path }}/google_drive_backup.sh"
+
+- name: Ensure that we reboot the machine when necessary
+  cron:
+    name: reboot_if_needed
+    minute: 0
+    hour: 3
+    state: present
+    user: root
+    job: "{{ scripts_path }}/reboot_if_needed.sh"

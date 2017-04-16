@@ -16,7 +16,10 @@
 
 - name: Install ansible-vault
   pip:
-    name: ansible-vault
+    name: "{{ item }}"
+  with_items:
+    - ansible-vault
+    - ipdb
 
 - name: Ensure required services are enabled and running
   service:

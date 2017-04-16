@@ -10,3 +10,9 @@
 [submodule "ansible/roles/django"]
 	path = ansible/roles/django
 	url = git@github.com:desecho/ansible-django.git
+[submodule "ansible/roles/fail2ban"]
+	path = ansible/roles/fail2ban
+	url = git@github.com:infOpen/ansible-role-fail2ban.git
+[submodule "ansible/roles/swapfile"]
+	path = ansible/roles/swapfile
+	url = git@github.com:kamaln7/ansible-swapfile.git
