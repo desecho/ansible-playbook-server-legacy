@@ -14,7 +14,7 @@
 - name: Fix locale
   command: "update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8"
 
-- name: Install ansible-vault
+- name: Install global pip packages
   pip:
     name: "{{ item }}"
   with_items:
