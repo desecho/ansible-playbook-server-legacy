@@ -10,6 +10,9 @@ django_env_settings_extra: |
   SOCIAL_AUTH_VK_OAUTH2_KEY = '{{ vk_oauth2_key }}'
   SOCIAL_AUTH_VK_OAUTH2_SECRET = '{{ vk_oauth2_secret }}'
 
+  SOCIAL_AUTH_FACEBOOK_KEY = '{{ fb_oauth2_key }}'
+  SOCIAL_AUTH_FACEBOOK_SECRET = '{{ fb_oauth2_secret }}'
+
   TMDB_KEY = '{{ tmdb_key }}'
   RAVEN_DSN = '{{ raven_dsn }}'
   HOST_MOVIES_TEST = 'moviestest.pagekite.me'
