@@ -1,0 +1,7 @@
+- name: Add remove_unused_movies command to cron
+  cron:
+    name: remove_unused_movies
+    special_time: monthly
+    state: present
+    user: root
+    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py remove_unused_movies"

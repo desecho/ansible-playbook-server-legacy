@@ -1,3 +1,6 @@
+- include: cron.yml
+  when: is_prod
+
 - name: Create cache directory
   file: path={{ path }} state=directory owner=root group=root
 
