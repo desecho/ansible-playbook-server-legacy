@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /root/desecho.org
+cd /opt/desecho.org
 git pull
