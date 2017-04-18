@@ -6,7 +6,7 @@
     mode: u=rwx,g=,o=
   with_items:
     - "deploy.sh"
-    - "manage.sh"
+    - "workon.sh"
 
 - name: Generate scripts for development
   template:
