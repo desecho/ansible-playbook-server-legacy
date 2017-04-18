@@ -16,7 +16,7 @@
   with_items:
     - "develop.sh"
     - "tox.sh"
-    - "isort.sh"
+    - "clean.sh"
     - "makemessages.sh"
 
   when: is_dev
@@ -27,6 +27,7 @@
     dest: "{{ home }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
+    - "deploy_desecho.org.sh"
     - "restart.sh"
     - "debug.sh"
   when: is_prod
