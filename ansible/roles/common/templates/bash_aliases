@@ -11,29 +11,30 @@ alias bowerlist='sudo bower list --allow-root'
 {% if is_dev -%}
 alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
 alias provisioninit='cd {{ home }}/ansible-playbook-server && ./provision.sh init_dev'
-alias provision='cd {{ home }}/ansible-playbook-server && ./provision.sh $1'
+alias provision='cd {{ home }}/ansible-playbook-server && ./provision.sh'
 {%- endif %}
 
 {% if is_prod -%}
-alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh $1'
+alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh'
 alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
 alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh init_prod'
 {%- endif %}
 
 # Custom
 
-alias deploy='{{ scripts_path }}/deploy.sh $1'
+alias deploy='{{ scripts_path }}/deploy.sh'
+alias manage='./manage.py'
 
 {% if is_dev -%}
-alias develop='{{ scripts_path }}/develop.sh $1'
-alias tox='{{ scripts_path }}/tox.sh $1'
-alias makemessages='{{ scripts_path }}/makemessages.sh $1'
-alias write='{{ scripts_path }}/fastcommit.sh $1'
+alias develop='{{ scripts_path }}/develop.sh'
+alias tox='{{ scripts_path }}/tox.sh'
+alias makemessages='{{ scripts_path }}/makemessages.sh'
+alias write='{{ scripts_path }}/fastcommit.sh'
 {%- endif %}
 
 {% if is_prod -%}
-alias restart='{{ scripts_path }}/restart.sh $1'
-alias debug='{{ scripts_path }}/debug.sh $1'
+alias restart='{{ scripts_path }}/restart.sh'
+alias debug='{{ scripts_path }}/debug.sh'
 {%- endif %}
 
 # Site
@@ -43,7 +44,7 @@ alias sitedeploy='{{ scripts_path }}/deploy_site.sh'
 {% if is_dev -%}
 # Blog
 
-alias blogdeploy='{{ scripts_path }}/blog_deploy.sh $1'
-alias blogpost='{{ scripts_path }}/blog_post.sh $1'
-alias blogpreview='{{ scripts_path }}/blog_preview.sh $1'
+alias blogdeploy='{{ scripts_path }}/blog_deploy.sh'
+alias blogpost='{{ scripts_path }}/blog_post.sh'
+alias blogpreview='{{ scripts_path }}/blog_preview.sh'
 {%- endif %}
