@@ -26,14 +26,18 @@ alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./p
 alias develop='{{ scripts_path }}/develop.sh $1'
 alias tox='{{ scripts_path }}/tox.sh $1'
 alias makemessages='{{ scripts_path }}/makemessages.sh $1'
-alias save='{{ scripts_path }}/fastcommit.sh $1'
+alias write='{{ scripts_path }}/fastcommit.sh $1'
 {%- endif %}
 
 {% if is_prod -%}
-alias sitedeploy='{{ scripts_path }}/deploy_desecho.org.sh'
 alias restart='{{ scripts_path }}/restart.sh $1'
 alias debug='{{ scripts_path }}/debug.sh $1'
+
 {%- endif %}
+
+# Site
+
+alias sitedeploy='{{ scripts_path }}/deploy_site.sh'
 
 {% if is_dev -%}
 # Blog

@@ -1,0 +1,9 @@
+- name: Install desecho.org
+  hosts: localhost
+
+  vars_files:
+      - vars/desecho.org.yml
+      - vars/dev.yml
+
+  roles:
+    - desecho.org

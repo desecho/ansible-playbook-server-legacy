@@ -1,2 +1,7 @@
-- name: Create deployment script
-  template: src=deploy_site.sh dest={{ home }}/deploy_{{ site_name }}.conf
+- name: Create deployment script for production
+  template: src=deploy_site.sh dest={{ home }}/deploy_site.sh
+  when: is_prod
+
+- name: Create deployment script for development
+  template: src=push_site.sh dest={{ home }}/deploy_site.sh
+  when: is_dev
