@@ -9,15 +9,13 @@ alias bowerlist='sudo bower list --allow-root'
 # For provisioning:
 
 {% if is_dev -%}
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
-alias provisioninit='cd {{ home }}/ansible-playbook-server && ./provision.sh init_dev'
-alias provision='cd {{ home }}/ansible-playbook-server && ./provision.sh'
+alias provision='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
+alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev'
 {%- endif %}
 
 {% if is_prod -%}
-alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh'
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
-alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh init_prod'
+alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
+alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod'
 {%- endif %}
 
 # Custom
