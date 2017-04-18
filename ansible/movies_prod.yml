@@ -2,11 +2,11 @@
   hosts: localhost
 
   vars_files:
+      - vars/prod.yml
       - vars/movies_prod_secrets.yml
       - vars/movies.yml
       - vars/movies_prod.yml
       - vars/site.yml
-      - vars/prod.yml
       - vars/django.yml
 
   roles:

@@ -2,10 +2,10 @@
   hosts: localhost
 
   vars_files:
+      - vars/dev.yml
       - vars/movies_dev_secrets.yml
       - vars/movies.yml
       - vars/movies_dev.yml
-      - vars/dev.yml
       - vars/django.yml
 
   roles:
