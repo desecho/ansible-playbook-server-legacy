@@ -9,7 +9,7 @@
 
 - name: Create deployment script for development
   template:
-    src: "push_site"
+    src: "push_site.sh"
     dest: "{{ scripts_path }}/deploy_site.sh"
     mode: u=rwx,g=,o=
   when: is_dev
