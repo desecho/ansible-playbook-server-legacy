@@ -15,9 +15,9 @@ alias provision='cd {{ home }}/ansible-playbook-server && ./provision.sh $1'
 {%- endif %}
 
 {% if is_prod -%}
-alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision.sh $1'
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision_prod.sh'
-alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision.sh init_prod'
+alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh $1'
+alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
+alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision.sh init_prod'
 {%- endif %}
 
 # Custom
