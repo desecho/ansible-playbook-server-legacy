@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd {{ home }}/{{ site_name }}
+cd /opt/{{ site_name }}
 git pull
