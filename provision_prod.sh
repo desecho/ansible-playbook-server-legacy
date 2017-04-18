@@ -2,5 +2,5 @@
 
 ./provision.sh init_prod
 ./provision.sh movies_prod
-./provision.sh desecho.org
+./provision.sh site_prod
 ./provision.sh blog_prod
