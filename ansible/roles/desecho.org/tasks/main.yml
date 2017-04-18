@@ -1,7 +1,15 @@
 - name: Create deployment script for production
-  template: src=deploy_site.sh dest={{ home }}/deploy_site.sh
+  template:
+    src: "{{ item }}"
+    dest: "{{ scripts_path }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
+    - "deploy_site.sh"
   when: is_prod
 
 - name: Create deployment script for development
-  template: src=push_site.sh dest={{ home }}/deploy_site.sh
+  template:
+    src: "push_site"
+    dest: "{{ scripts_path }}/deploy_site.sh"
+    mode: u=rwx,g=,o=
   when: is_dev
