@@ -1,4 +1,12 @@
 ---
+- name: Ensure that scripts dir exists
+  file:
+    path: "{{ scripts_path }}"
+    state: directory
+    owner: "root"
+    group: "root"
+    mode: "0755"
+
 - name: Generate scripts
   template:
     src: "{{ item }}"

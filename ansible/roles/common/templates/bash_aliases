@@ -6,12 +6,23 @@ alias bowerinstall='sudo bower install --allow-root'
 alias bowerlist='sudo bower list --allow-root'
 
 
+# For provisioning:
+
 alias provision='cd {{ home }}/ansible-playbook-server && ./provision.sh $1'
-alias deploy='{{ scripts_path }}/deploy.sh $1'
 
 {% if is_dev -%}
 alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
 alias provisioninit='cd {{ home }}/ansible-playbook-server && ./provision.sh init_dev'
+{%- endif %}
+
+{% if is_prod -%}
+alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision_prod.sh'
+alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision.sh init_prod'
+{%- endif %}
+
+# Custom
+
+{% if is_dev -%}
 alias develop='{{ scripts_path }}/develop.sh $1'
 alias tox='{{ scripts_path }}/tox.sh $1'
 alias makemessages='{{ scripts_path }}/makemessages.sh $1'
@@ -19,9 +30,15 @@ alias save='{{ scripts_path }}/fastcommit.sh $1'
 {%- endif %}
 
 {% if is_prod -%}
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision_prod.sh'
-alias provisioninit='cd {{ home }}/ansible-playbook-server && ./bootstrap && ./provision.sh init_prod'
-alias deploysite='{{ scripts_path }}/deploy_desecho.org.sh'
+alias sitedeploy='{{ scripts_path }}/deploy_desecho.org.sh'
 alias restart='{{ scripts_path }}/restart.sh $1'
 alias debug='{{ scripts_path }}/debug.sh $1'
+{%- endif %}
+
+{% if is_dev -%}
+# Blog
+
+alias blogdeploy='{{ scripts_path }}/blog_deploy.sh $1'
+alias blogpost='{{ scripts_path }}/blog_post.sh $1'
+alias blogpreview='{{ scripts_path }}/blog_preview.sh $1'
 {%- endif %}
