@@ -29,7 +29,6 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "save.sh"
     - "develop.sh"
     - "tox.sh"
     - "clean.sh"
