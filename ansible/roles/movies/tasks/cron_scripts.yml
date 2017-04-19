@@ -13,3 +13,19 @@
     mode: u=rwx,g=,o=
   vars:
     command: remove_unused_movies
+
+- name: Generate command
+  template:
+    src: "command.sh"
+    dest: "{{ cron_path }}/update_movie_data.sh"
+    mode: u=rwx,g=,o=
+  vars:
+    command: update_movie_data
+
+- name: Generate command
+  template:
+    src: "command.sh"
+    dest: "{{ cron_path }}/update_imdb_ratings.sh"
+    mode: u=rwx,g=,o=
+  vars:
+    command: update_imdb_ratings

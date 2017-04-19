@@ -7,30 +7,15 @@
     - "mysql_backup.sh"
     - "google_drive_backup.sh"
     - "reboot_if_needed.sh"
+    - "backup.sh"
+    - "backup_cron.sh"
 
-- name: Ensure that we have a cron job for mysql backup
+# We also reboot if needed right after backup.
+# So backup goes in 3 steps. DB dump, file sync with the cloud, reboot if needed.
+- name: Ensure that we have a cron job for backup
   cron:
-    name: mysql_backup
-    minute: 0
-    hour: 1
+    name: backup
+    special_time: daily
     state: present
     user: root
-    job: "{{ scripts_path }}/mysql_backup.sh"
-
-- name: Ensure that we have a cron job for google drive backup
-  cron:
-    name: google_drive_backup
-    minute: 0
-    hour: 1
-    state: present
-    user: root
-    job: "{{ scripts_path }}/google_drive_backup.sh"
-
-- name: Ensure that we reboot the machine when necessary
-  cron:
-    name: reboot_if_needed
-    minute: 0
-    hour: 3
-    state: present
-    user: root
-    job: "{{ scripts_path }}/reboot_if_needed.sh"
+    job: "{{ scripts_path }}/backup_cron.sh"

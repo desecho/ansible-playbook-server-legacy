@@ -1,3 +1,5 @@
+#!/bin/bash
+
 info() { while IFS='' read -r line; do echo "$(date) - {{ django_name }} - {{ command }} - $line" >> /root/errors.log; done; };
 error() { while IFS='' read -r line; do echo "$(date) - {{ django_name }} - {{ command }} - $line" >> /root/info.log; done; };
 

@@ -12,7 +12,7 @@
     special_time: yearly
     state: present
     user: root
-    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py update_movie_data"
+    job: "{{ cron_path }}/update_movie_data.sh"
 
 - name: Add update_imdb_ratings command to cron
   cron:
@@ -20,4 +20,4 @@
     special_time: monthly
     state: present
     user: root
-    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py update_imdb_ratings"
+    job: "{{ cron_path }}/update_imdb_ratings.sh"
