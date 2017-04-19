@@ -1,48 +1,54 @@
-# Fix numeric keypad in nano
-alias nano='nano -K'
+# Common
+    # Fix numeric keypad in nano
+    alias nano='nano -K'
+    alias upgrade='apt-get update && apt-get upgrade'
+    alias bower='bower --allow-root'
 
-alias upgrade='apt-get update && apt-get upgrade'
-alias bowerinstall='sudo bower install --allow-root'
-alias bowerlist='sudo bower list --allow-root'
 
-
-# For provisioning:
-
-{% if is_dev -%}
-alias provision='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev'
-{%- endif %}
-
-{% if is_prod -%}
-alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
-alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod'
-{%- endif %}
+# Provisioning
+    {% if is_dev -%}
+        alias provision='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
+        alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev'
+    {%- endif %}
+    {% if is_prod -%}
+        alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
+        alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod'
+    {%- endif %}
 
 # Custom
-
-alias deploy='{{ scripts_path }}/deploy.sh'
-alias manage='./manage.py'
+    alias deploy='{{ scripts_path }}/deploy.sh'
+    alias manage='./manage.py'
 
 {% if is_dev -%}
-alias develop='{{ scripts_path }}/develop.sh'
-alias tox='{{ scripts_path }}/tox.sh'
-alias makemessages='{{ scripts_path }}/makemessages.sh'
-alias write='{{ scripts_path }}/fastcommit.sh'
+    alias develop='{{ scripts_path }}/develop.sh'
+    alias tox='{{ scripts_path }}/tox.sh'
+    alias makemessages='{{ scripts_path }}/makemessages.sh'
+    alias write='{{ scripts_path }}/fastcommit.sh'
 {%- endif %}
 
 {% if is_prod -%}
-alias restart='{{ scripts_path }}/restart.sh'
-alias debug='{{ scripts_path }}/debug.sh'
+    alias restart='{{ scripts_path }}/restart.sh'
+    alias debug='{{ scripts_path }}/debug.sh'
 {%- endif %}
 
-# Site
 
-alias sitedeploy='{{ scripts_path }}/deploy_site.sh'
+# Apps
 
-{% if is_dev -%}
-# Blog
+    # Site
 
-alias blogdeploy='{{ scripts_path }}/blog_deploy.sh'
-alias blogpost='{{ scripts_path }}/blog_post.sh'
-alias blogpreview='{{ scripts_path }}/blog_preview.sh'
+    alias sitedeploy='{{ scripts_path }}/deploy_site.sh'
+
+    {% if is_dev -%}
+    # Blog
+
+    alias blogdeploy='{{ scripts_path }}/blog_deploy.sh'
+    alias blogpost='{{ scripts_path }}/blog_post.sh'
+    alias blogpreview='{{ scripts_path }}/blog_preview.sh'
+    {%- endif %}
+
+
+{% if is_prod -%}
+# System
+
+    alias cronlog='zgrep -i cron /var/log/syslog*'
 {%- endif %}

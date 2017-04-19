@@ -4,4 +4,20 @@
     special_time: monthly
     state: present
     user: root
-    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py remove_unused_movies"
+    job: "{{ cron_path }}/remove_unused_movies.sh"
+
+- name: Add update_movie_data command to cron
+  cron:
+    name: update_movie_data
+    special_time: yearly
+    state: present
+    user: root
+    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py update_movie_data"
+
+- name: Add update_imdb_ratings command to cron
+  cron:
+    name: update_imdb_ratings
+    special_time: monthly
+    state: present
+    user: root
+    job: "/opt/{{ django_name }}/env/bin/python /opt/{{ django_name }}/project/src/manage.py update_imdb_ratings"
