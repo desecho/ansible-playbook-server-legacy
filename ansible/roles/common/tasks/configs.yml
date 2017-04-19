@@ -1,7 +1,7 @@
 ---
 - name: "Generate configs"
   template:
-    src: "{{ item }}"
+    src: "configs/{{ item }}"
     dest: "/root/.{{ item }}"
     owner: root
     mode: u=rw,g=,o=
@@ -12,7 +12,7 @@
 
 - name: "Generate configs for development"
   template:
-    src: "{{ item }}"
+    src: "configs/{{ item }}"
     dest: "/home/ubuntu/.{{ item }}"
     owner: ubuntu
     mode: u=rw,g=,o=

@@ -19,7 +19,7 @@
 
 - name: Generate cron scripts
   template:
-    src: "{{ item }}"
+    src: "backup_cron.sh"
     dest: "{{ cron_path }}/backup.sh"
     mode: u=rwx,g=,o=
 
