@@ -3,6 +3,7 @@
 
   vars_files:
       - vars/prod.yml
+      - vars/common.yml
       - vars/movies_prod_secrets.yml
       - vars/movies.yml
       - vars/movies_prod.yml

@@ -2,8 +2,9 @@
   hosts: localhost
 
   vars_files:
-      - vars/desecho.org.yml
       - vars/dev.yml
+      - vars/common.yml
+      - vars/desecho.org.yml
 
   roles:
     - desecho.org

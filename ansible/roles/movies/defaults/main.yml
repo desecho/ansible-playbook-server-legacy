@@ -1,4 +1,5 @@
 path: "/opt/{{ django_name }}/cache"
-cron_path: "{{ home }}/scripts/cron"
 python: /opt/{{ django_name }}/env/bin/python
 manage: /opt/{{ django_name }}/project/src/manage.py
+is_prod: no
+is_dev: no

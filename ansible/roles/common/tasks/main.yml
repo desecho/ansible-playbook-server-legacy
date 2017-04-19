@@ -27,12 +27,3 @@
     enabled: yes
     state: started
   with_items: "{{ common_enabled_services }}"
-
-
-# - name: Do we have ssh key?
-#   stat: path="{{ ssh_key_path }}"
-#   register: ssh_key_stat
-
-# - name: Generate key
-#   command: "ssh-keygen -t rsa -C {{ email }} -f {{ ssh_key_path }} -N ''"
-#   when: not ssh_key_stat.stat.exists

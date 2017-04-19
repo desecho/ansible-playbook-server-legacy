@@ -16,9 +16,6 @@ common_extra_packages: []
 common_enabled_services:
   - ntp
 
-is_dev: no
-is_prod: no
 timezone: US/Eastern
-scripts_path: "{{ home }}/scripts"
-
-# ssh_key_path: "/home/{{ user }}/.ssh/id_rsa"
+is_prod: no
+is_dev: no

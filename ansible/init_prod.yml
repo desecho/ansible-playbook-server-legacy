@@ -2,8 +2,9 @@
   hosts: localhost
 
   vars_files:
-      - vars/init.yml
       - vars/prod.yml
+      - vars/common.yml
+      - vars/init.yml
 
   roles:
     - swapfile

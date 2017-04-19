@@ -1,5 +1,2 @@
----
-is_dev: no
 is_prod: no
-
-scripts_path: "{{ home }}/scripts"
+is_dev: no

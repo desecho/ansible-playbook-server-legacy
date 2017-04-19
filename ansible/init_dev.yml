@@ -2,8 +2,9 @@
   hosts: localhost
 
   vars_files:
-      - vars/init.yml
       - vars/dev.yml
+      - vars/common.yml
+      - vars/init.yml
       - vars/init_dev.yml
 
   roles:

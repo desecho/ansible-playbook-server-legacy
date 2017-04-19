@@ -2,8 +2,9 @@
   hosts: localhost
 
   vars_files:
-      - vars/blog_prod.yml
       - vars/prod.yml
+      - vars/common.yml
+      - vars/blog_prod.yml
       - vars/site.yml
 
   roles:

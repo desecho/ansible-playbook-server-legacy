@@ -1,0 +1,3 @@
+scripts_path: "{{ home }}/scripts"
+logs_path: "{{ home }}/logs"
+cron_path: "{{ scripts_path }}/cron"
