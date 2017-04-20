@@ -3,11 +3,13 @@
     alias nano='nano -K'
     alias upgrade='apt-get update && apt-get upgrade'
     alias bower='bower --allow-root'
-    alias lsa='ls -lah'
+    alias lsa='ls -lah'2222
 
 # Git
+    # direct
     alias push='git push'
     alias pull='git pull'
+    alias fetch='git fetch'
     alias rebase='git rebase'
     alias merge='git merge'
     alias checkout='git checkout'
@@ -18,8 +20,13 @@
     alias diff='git diff'
     alias add='git add'
     alias status='git status'
+    alias log='git log'
+
+    # custom
     alias write='git add .;git commit -m'
     alias revert='git checkout --'
+    alias amend='git commit --amend -m'
+    alias new='git checkout -b'
 
 # Provisioning
     {% if is_dev -%}
