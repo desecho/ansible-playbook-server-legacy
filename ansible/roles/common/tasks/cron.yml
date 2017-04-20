@@ -1,10 +1,13 @@
-- name: Ensure that cron dir exists
+- name: Ensure that required dirs exists
   file:
-    path: "{{ cron_path }}"
+    path: "{{ item }}"
     state: directory
     owner: "root"
     group: "root"
     mode: "0755"
+  with_items:
+    - "{{ logs_path }}"
+    - "{{ cron_path }}"
 
 - name: Generate cron scripts
   template:
