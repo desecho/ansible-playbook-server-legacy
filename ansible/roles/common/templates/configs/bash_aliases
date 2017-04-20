@@ -75,3 +75,17 @@
 
     alias cronlog='zgrep -i cron /var/log/syslog*'
 {%- endif %}
+
+
+{% if is_dev -%}
+
+# Fix cd for ubuntu machine for root
+cd () {
+    if [ $# = 0 ]; then
+        builtin cd /vagrant
+    else
+        builtin cd "$@"
+    fi
+}
+
+{%- endif %}

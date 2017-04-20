@@ -1,3 +1,6 @@
+email: desecho@gmail.com
+full_name: Anton Samarchyan
+
 scripts_path: "{{ home }}/scripts"
 logs_path: "{{ home }}/logs"
 cron_path: "{{ scripts_path }}/cron"
