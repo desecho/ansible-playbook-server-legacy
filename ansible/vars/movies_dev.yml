@@ -1,8 +1,6 @@
-django_domain_name: "{{ django_name }}.local"
 django_project_symlink_dest: "{{ home }}/{{ django_name }}"
 django_debug: yes
 mysql_root_password: password
-django_secret_key: key
 django_app_name: moviesapp
 django_create_uwsgi_config: no
 
