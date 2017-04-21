@@ -1,5 +1,7 @@
+#jinja2: trim_blocks:False
+
 # Common
-    ## a quick way to get out of current directory ##
+    # a quick way to get out of current directory
     alias ..='cd ..'
     alias ...='cd ../../../'
     alias ....='cd ../../../../'
@@ -43,10 +45,13 @@
     alias amend="git commit --amend"
     alias new="git checkout -b"
 
+{% if is_dev -%}
 # Python (Used on host only)
     alias clean="{{ host_path }}/clean.sh"
+{%- endif %}
 
 # ---------------------------------------------
+
 # Git
     {% if is_dev -%}
     alias write="{{ scripts_path }}/fastcommit.sh"
@@ -62,7 +67,6 @@
     alias provision="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
     alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
     {%- endif %}
-
 # Django
     alias deploy="{{ scripts_path }}/deploy.sh"
     alias manage="./manage.py"
@@ -74,10 +78,7 @@
 
 {% if is_prod -%}
     alias restart="{{ scripts_path }}/restart.sh"
-    alias debug="{{ scripts_path }}/debug.sh"
-{%- endif %}
-
-# Services
+    alias debug="{{ scripts_path }}/debug.sh"{%- endif %}# Services
 
     # Site
     alias sitedeploy="{{ scripts_path }}/deploy_site.sh"

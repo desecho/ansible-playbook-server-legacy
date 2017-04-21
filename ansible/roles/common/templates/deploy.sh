@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $# -eq 0 ]] ; then
+    echo "Enter project name"
+    exit 0
+fi
+
 cd {{ home }}/$1
 git pull
 bower install --allow-root
