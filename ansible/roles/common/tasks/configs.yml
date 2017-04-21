@@ -1,22 +1,16 @@
-- name: "Generate configs"
+- name: Generate configs
   template:
     src: "configs/{{ item }}"
-    dest: "/root/.{{ item }}"
+    dest: "~/.{{ item }}"
     owner: root
     mode: u=rw,g=,o=
   with_items:
-    - "bash_aliases"
-    - "bash_profile"
-    - "gitconfig"
+    - bash_aliases
+    - bash_profile
+    - gitconfig
+    - bash_changes
 
-- name: "Generate configs for development"
-  template:
-    src: "configs/{{ item }}"
-    dest: "/home/ubuntu/.{{ item }}"
-    owner: ubuntu
-    mode: u=rw,g=,o=
-  with_items:
-    - "bash_aliases"
-    - "bash_profile"
-    - "gitconfig"
-  when: is_dev
+- name: Apply some changes to bash
+  lineinfile:
+    path: ~/.bashrc
+    line: . ~/.bash_changes

@@ -1,5 +1,5 @@
 #!/bin/bash
 
 git add .
-git commit -m'changes'
+git commit -m"Changes"
 git push

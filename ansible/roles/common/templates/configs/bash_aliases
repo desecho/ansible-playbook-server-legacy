@@ -1,91 +1,78 @@
 # Common
-    # Fix numeric keypad in nano
-    alias nano='nano -K'
-    alias upgrade='apt-get update && apt-get upgrade'
-    alias bower='bower --allow-root'
-    alias lsa='ls -lah'2222
+    # alias upgrade="apt-get update && apt-get upgrade"
+    alias ?="cat ~/.bash_aliases"
+    alias lsa="ls -lah"
 
 # Git
-    # direct
-    alias push='git push'
-    alias pull='git pull'
-    alias fetch='git fetch'
-    alias rebase='git rebase'
-    alias merge='git merge'
-    alias checkout='git checkout'
-    alias branch='git branch'
-    alias reset='git reset'
-    alias stash='git stash'
-    alias commit='git commit'
-    alias diff='git diff'
-    alias add='git add'
-    alias status='git status'
-    alias log='git log'
+    alias push="git push"
+    alias pull="git pull"
+    alias fetch="git fetch"
+    alias rebase="git rebase"
+    alias merge="git merge"
+    alias checkout="git checkout"
+    alias branch="git branch"
+    alias reset="git reset"
+    alias stash="git stash"
+    alias commit="git commit"
+    alias diff="git diff"
+    alias add="git add"
+    alias status="git status"
+    alias log="git log"
 
-    # custom
-    alias write='git add .;git commit -m'
-    alias revert='git checkout --'
-    alias amend='git commit --amend -m'
-    alias new='git checkout -b'
+    alias write="git add .; git commit"  # Warning! This command is actually ovewritten on dev.
+    alias revert="git checkout --"
+    alias amend="git commit --amend"
+    alias new="git checkout -b"
+
+# Python (Used on host only)
+    alias clean="{{ host_path }}/clean.sh"
+
+# ---------------------------------------------
+# Git
+    {% if is_dev -%}
+    alias write="{{ scripts_path }}/fastcommit.sh"
+    {%- endif %}
 
 # Provisioning
     {% if is_dev -%}
-        alias provision='cd {{ home }}/ansible-playbook-server && ./provision_dev.sh'
-        alias provisionall='cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev'
+    alias provision="cd {{ home }}/ansible-playbook-server && ./provision_dev.sh"
+    alias provisionall="cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev"
     {%- endif %}
+
     {% if is_prod -%}
-        alias provision='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh'
-        alias provisionall='cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod'
+    alias provision="cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
+    alias provisionall="cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
     {%- endif %}
 
-# Custom
-    alias deploy='{{ scripts_path }}/deploy.sh'
-    alias manage='./manage.py'
-
-{% if is_dev -%}
-    alias develop='{{ scripts_path }}/develop.sh'
-    alias tox='{{ scripts_path }}/tox.sh'
-    alias makemessages='{{ scripts_path }}/makemessages.sh'
-    alias write='{{ scripts_path }}/fastcommit.sh'
-{%- endif %}
+# Django
+    alias deploy="{{ scripts_path }}/deploy.sh"
+    alias manage="./manage.py"
+    {% if is_dev -%}
+    alias develop="{{ scripts_path }}/develop.sh"
+    alias tox="{{ scripts_path }}/tox.sh"
+    alias makemessages="{{ scripts_path }}/makemessages.sh"
+    {%- endif %}
 
 {% if is_prod -%}
-    alias restart='{{ scripts_path }}/restart.sh'
-    alias debug='{{ scripts_path }}/debug.sh'
+    alias restart="{{ scripts_path }}/restart.sh"
+    alias debug="{{ scripts_path }}/debug.sh"
 {%- endif %}
 
-
-# Apps
+# Services
 
     # Site
-
-    alias sitedeploy='{{ scripts_path }}/deploy_site.sh'
+    alias sitedeploy="{{ scripts_path }}/deploy_site.sh"
 
     {% if is_dev -%}
     # Blog
-
-    alias blogdeploy='{{ scripts_path }}/blog_deploy.sh'
-    alias blogpost='{{ scripts_path }}/blog_post.sh'
-    alias blogpreview='{{ scripts_path }}/blog_preview.sh'
+    alias blogdeploy="{{ scripts_path }}/blog_deploy.sh"
+    alias blogpost="{{ scripts_path }}/blog_post.sh"
+    alias blogpreview="{{ scripts_path }}/blog_preview.sh"
     {%- endif %}
 
 
 {% if is_prod -%}
 # System
 
-    alias cronlog='zgrep -i cron /var/log/syslog*'
-{%- endif %}
-
-
-{% if is_dev -%}
-
-# Fix cd for ubuntu machine for root
-cd () {
-    if [ $# = 0 ]; then
-        builtin cd /vagrant
-    else
-        builtin cd "$@"
-    fi
-}
-
+    alias cronlog="zgrep -i cron /var/log/syslog*"
 {%- endif %}

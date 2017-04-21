@@ -2,9 +2,9 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: "root"
-    group: "root"
-    mode: "0755"
+    owner: root
+    group: root
+    mode: 0755
   with_items:
     - "{{ logs_path }}"
     - "{{ cron_path }}"
@@ -15,14 +15,14 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "mysql_backup.sh"
-    - "google_drive_backup.sh"
-    - "reboot_if_needed.sh"
-    - "backup.sh"
+    - mysql_backup.sh
+    - google_drive_backup.sh
+    - reboot_if_needed.sh
+    - backup.sh
 
 - name: Generate cron scripts
   template:
-    src: "backup_cron.sh"
+    src: backup_cron.sh
     dest: "{{ cron_path }}/backup.sh"
     mode: u=rwx,g=,o=
 

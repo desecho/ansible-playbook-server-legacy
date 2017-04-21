@@ -4,12 +4,12 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "deploy_site.sh"
+    - deploy_site.sh
   when: is_prod
 
 - name: Create deployment script for development
   template:
-    src: "push_site.sh"
+    src: push_site.sh
     dest: "{{ scripts_path }}/deploy_site.sh"
     mode: u=rwx,g=,o=
   when: is_dev

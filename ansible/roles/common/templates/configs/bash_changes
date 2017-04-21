@@ -1,0 +1,16 @@
+# Fix numeric keypad in nano
+alias nano="nano -K"
+alias bower="bower --allow-root"
+
+{% if is_dev -%}
+
+# Fix cd for ubuntu machine for root
+cd () {
+    if [ $# = 0 ]; then
+        builtin cd /vagrant
+    else
+        builtin cd "$@"
+    fi
+}
+
+{%- endif %}

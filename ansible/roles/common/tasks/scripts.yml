@@ -2,9 +2,9 @@
   file:
     path: "{{ scripts_path }}"
     state: directory
-    owner: "root"
-    group: "root"
-    mode: "0755"
+    owner: root
+    group: root
+    mode: 0755
 
 - name: Generate scripts
   template:
@@ -12,7 +12,7 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "deploy.sh"
+    - deploy.sh
 
 - name: Generate scripts
   template:
@@ -20,7 +20,7 @@
     dest: "{{ home }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "workon"
+    - workon
 
 - name: Generate scripts for development
   template:
@@ -28,11 +28,11 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "develop.sh"
-    - "tox.sh"
-    - "clean.sh"
-    - "makemessages.sh"
-    - "fastcommit.sh"
+    - develop.sh
+    - tox.sh
+    - clean.sh
+    - makemessages.sh
+    - fastcommit.sh
 
   when: is_dev
 
@@ -42,6 +42,6 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "restart.sh"
-    - "debug.sh"
+    - restart.sh
+    - debug.sh
   when: is_prod

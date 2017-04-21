@@ -8,7 +8,7 @@
 - name: Set timezone
   command: "timedatectl set-timezone {{ timezone }}"
 
-- name: Install "bower" node.js package globally.
+- name: Install bower node.js package globally.
   npm: name=bower global=yes
 
 - name: Fix locale
@@ -27,3 +27,9 @@
     enabled: yes
     state: started
   with_items: "{{ common_enabled_services }}"
+
+- name: Make sure we have ubuntu host for our vm
+  lineinfile:
+    path: /etc/hosts
+    line: 127.0.0.1 ubuntu
+  when: is_dev

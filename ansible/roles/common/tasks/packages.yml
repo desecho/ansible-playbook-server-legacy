@@ -4,7 +4,7 @@
   register: aptitude_stat
 
 - name: Ensure that requirements for the apt action are present
-  shell: "apt-get update && apt-get install -y python-apt aptitude"
+  shell: apt-get update && apt-get install -y python-apt aptitude
   when: not aptitude_stat.stat.exists
 
 - name: apt-get update/upgrade
