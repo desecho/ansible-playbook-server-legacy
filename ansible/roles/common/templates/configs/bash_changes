@@ -1,6 +1,9 @@
-# Fix numeric keypad in nano
-alias nano="nano -K"
+alias nano="nano -K"  # Fix numeric keypad in nano
 alias bower="bower --allow-root"
+alias wget='wget -c'  # Resume wget by default
+alias df='df -H'
+alias cp='cp -r'
+alias free='free -h'
 
 {% if is_dev -%}
 

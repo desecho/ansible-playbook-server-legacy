@@ -17,6 +17,7 @@ It also provides a certain set of useful aliases.
 
 It uses [ansible-vault][ansible-vault] to manage secrets.
 It uses [Grive][Grive] and [Google Drive][Google Drive] for backup storage.
+It installs htop and iftop to monitor through CLI
 
 **Warning**: It suits my particular needs but might not be suitable for others. It is not perfect and it is not meant to be. It's also currently set up in a way that is not the most secure thing one might come up with. See "Drawbacks" below for details.
 

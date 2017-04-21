@@ -1,7 +1,26 @@
 # Common
+    ## a quick way to get out of current directory ##
+    alias ..='cd ..'
+    alias ...='cd ../../../'
+    alias ....='cd ../../../../'
+    alias .....='cd ../../../../'
+    alias .4='cd ../../../../'
+    alias .5='cd ../../../../..'
+
     # alias upgrade="apt-get update && apt-get upgrade"
     alias ?="cat ~/.bash_aliases"
     alias lsa="ls -lah"
+    alias weight="du -sh"
+    alias whosfat="du -hsx * | sort -rh | head -10"
+    alias copy="rsync -ah --stats -P"
+    alias link="ln -s"
+    alias shoot="kill -9"
+    alias search="grep -iIr"
+
+    # reference
+    # find [dir] -name "[*.*]" -type f  -- list files with mask. Add delete to remove.
+    # netstat -nat -- show open ports.
+    # netstat -peant | grep ":[port]" -- find process which uses port.
 
 # Git
     alias push="git push"
@@ -35,13 +54,13 @@
 
 # Provisioning
     {% if is_dev -%}
-    alias provision="cd {{ home }}/ansible-playbook-server && ./provision_dev.sh"
-    alias provisionall="cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev"
+    alias provision="clear; cd {{ home }}/ansible-playbook-server && ./provision_dev.sh"
+    alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev"
     {%- endif %}
 
     {% if is_prod -%}
-    alias provision="cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
-    alias provisionall="cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
+    alias provision="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
+    alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
     {%- endif %}
 
 # Django
