@@ -8,5 +8,6 @@
       - vars/init_dev.yml
 
   roles:
+    - nodejs
     - swapfile
     - common

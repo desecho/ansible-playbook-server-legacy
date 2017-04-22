@@ -1,7 +1,11 @@
+
 mysql_user_password: "{{ mysql_root_password }}"
 django_fixtures_to_load:
   - moviesapp/fixtures/lists.json
 django_name: movies
+
+nodejs_package_json_path: "{{ home }}/{{ django_name }}"
+
 django_project_name: "{{ django_name }}"
 django_env_settings_extra: |
   ADMIN_NAME = '{{ full_name }}'

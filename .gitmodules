@@ -16,3 +16,6 @@
 [submodule "ansible/roles/swapfile"]
 	path = ansible/roles/swapfile
 	url = git@github.com:kamaln7/ansible-swapfile.git
+[submodule "ansible/roles/nodejs"]
+	path = ansible/roles/nodejs
+	url = git@github.com:geerlingguy/ansible-role-nodejs.git

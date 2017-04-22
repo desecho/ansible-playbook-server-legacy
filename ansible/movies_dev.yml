@@ -10,6 +10,7 @@
       - vars/django.yml
 
   roles:
+    - nodejs
     - role: mysql
       become: yes
     - django
