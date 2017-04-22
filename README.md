@@ -149,6 +149,7 @@ Playbooks used
 * [ansible-swapfile][ansible-swapfile]
 * [ansible-role-mysql][ansible-role-mysql]
 * [acme-nginx][acme-nginx]
+* [ansible-role-nodejs][ansible-role-nodejs]
 
 
 Drawbacks
@@ -184,3 +185,4 @@ Drawbacks
 [Octopress]: http://octopress.org
 [Grive]: https://github.com/Grive/grive
 [Google Drive]: https://drive.google.com
+[ansible-role-nodejs]: https://github.com/geerlingguy/ansible-role-nodejs
