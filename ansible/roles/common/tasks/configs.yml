@@ -33,3 +33,25 @@
     - gitconfig
     - bash_changes
   when: is_dev
+
+
+- name: Generate ssh config
+  template:
+    src: "configs/ssh_config"
+    dest: "~/.ssh/config"
+    owner: ubuntu
+    mode: u=rw,g=,o=
+  with_items:
+    - ssh_config
+  when: is_dev
+
+
+- name: Generate ssh config
+  template:
+    src: "configs/ssh_config"
+    dest: "/root/.ssh/config"
+    owner: root
+    mode: u=rw,g=,o=
+  with_items:
+    - ssh_config
+  when: is_dev

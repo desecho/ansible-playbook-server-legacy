@@ -1,0 +1,4 @@
+Host do
+    HostName desecho.org
+    User root
+    ForwardAgent yes

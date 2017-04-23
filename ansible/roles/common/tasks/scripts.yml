@@ -33,7 +33,7 @@
     - clean.sh
     - makemessages.sh
     - fastcommit.sh
-
+    - loaddump.sh
   when: is_dev
 
 - name: Generate scripts for production

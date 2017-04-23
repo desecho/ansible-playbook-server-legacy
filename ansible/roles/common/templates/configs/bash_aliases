@@ -73,8 +73,9 @@
     alias manage="./manage.py"
     {% if is_dev -%}
     alias develop="{{ scripts_path }}/develop.sh"
-    alias tox="{{ scripts_path }}/tox.sh"
+    alias qa="{{ scripts_path }}/tox.sh"
     alias makemessages="{{ scripts_path }}/makemessages.sh"
+    alias loaddump="{{ scripts_path }}/loaddump.sh"
     {%- endif %}
 
 {% if is_prod -%}
