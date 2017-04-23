@@ -5,8 +5,8 @@ common_required_packages:
   - git
   - python-pip  # for ansible-vault
   - ntp
-  # - nodejs-legacy  # for bower
   - unattended-upgrades  # make sure we get security updates automatically
+  # for monitoring:
   - htop
   - iftop
 

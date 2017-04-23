@@ -47,9 +47,6 @@
     alias new="git checkout -b"
 
 {% if is_dev -%}
-# Python (Used on host only)
-    alias clean="{{ host_path }}/clean.sh"
-{%- endif %}
 
 # ---------------------------------------------
 

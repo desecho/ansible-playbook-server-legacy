@@ -30,7 +30,6 @@
   with_items:
     - develop.sh
     - tox.sh
-    - clean.sh
     - makemessages.sh
     - fastcommit.sh
     - loaddump.sh
