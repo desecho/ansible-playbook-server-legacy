@@ -20,6 +20,11 @@
   with_items:
     - ansible-vault
     - ipdb
+
+- name: Install global pip packages for development
+  pip:
+    name: "{{ item }}"
+  with_items:
     - tox
     - isort
 
