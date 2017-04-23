@@ -1,6 +1,2 @@
-common_extra_packages:
-  - python-tox
-  - isort
-
 pycharm_path: /Applications/PyCharm CE.app/Contents/bin
 host_path: /Users/desecho/vm

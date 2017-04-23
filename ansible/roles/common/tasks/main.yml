@@ -20,6 +20,8 @@
   with_items:
     - ansible-vault
     - ipdb
+    - tox
+    - isort
 
 - name: Ensure required services are enabled and running
   service:
