@@ -1,6 +1,11 @@
 #jinja2: trim_blocks:False
 
 # Common
+
+    terminate() {
+        ps aux | grep -ie $1 | awk '{print $2}' | xargs kill -9
+    }
+
     # a quick way to get out of current directory
     alias ..='cd ..'
     alias ...='cd ../../../'
@@ -18,7 +23,8 @@
     alias link="ln -s"
     alias shoot="kill -9"
     alias search="grep -iIr"
-    # terminate
+    alias exp="tmp=`mktemp -d`; cd $tmp"
+    alias pexp="exp; virtualenv env;"
 
     # reference
     # find [dir] -name "[*.*]" -type f  -- list files with mask. Add delete to remove.
