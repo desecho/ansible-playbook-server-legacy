@@ -132,15 +132,6 @@ blogpreview
 sitedeploy
 ```
 
-
-Still not automated
-------------
-* [Octopress][Octopress] installation.
-* [Grive][Grive] installation.
-* It does not set up connection to your production server.
-* It does not create the ssh key.
-
-
 Playbooks used
 ------------
 * [ansible-nginx][ansible-nginx]
@@ -150,6 +141,14 @@ Playbooks used
 * [ansible-role-mysql][ansible-role-mysql]
 * [acme-nginx][acme-nginx]
 * [ansible-role-nodejs][ansible-role-nodejs]
+
+
+Still not automated
+------------
+* [Octopress][Octopress] installation.
+* [Grive][Grive] installation.
+* It does not set up connection to your production server.
+* It does not create the ssh key.
 
 
 Drawbacks
