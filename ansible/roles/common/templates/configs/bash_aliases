@@ -1,103 +1,103 @@
 #jinja2: trim_blocks:False
 
-# Common
+# =================== Common ====================
 
-    terminate() {
-        ps aux | grep -ie $1 | awk '{print $2}' | xargs kill -9
-    }
+terminate() {
+    ps aux | grep -ie $1 | awk '{print $2}' | xargs kill -9
+}
 
-    # a quick way to get out of current directory
-    alias ..='cd ..'
-    alias ...='cd ../../../'
-    alias ....='cd ../../../../'
-    alias .....='cd ../../../../'
-    alias .4='cd ../../../../'
-    alias .5='cd ../../../../..'
+# a quick way to get out of current directory
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
 
-    # alias upgrade="apt-get update && apt-get upgrade"
-    alias ?="cat ~/.bash_aliases"
-    alias lsa="ls -lah"
-    alias weight="du -sh"
-    alias whosfat="du -hsx * | sort -rh | head -10"
-    alias copy="rsync -ah --stats -P"
-    alias link="ln -s"
-    alias shoot="kill -9"
-    alias search="grep -iIr"
-    alias exp="tmp=`mktemp -d`; cd $tmp"
-    alias pexp="exp; virtualenv env;"
+# alias upgrade="apt-get update && apt-get upgrade"
+alias ?="cat ~/.bash_aliases"
+alias lsa="ls -lah"
+alias weight="du -sh"
+alias whosfat="du -hsx * | sort -rh | head -10"
+alias copy="rsync -ah --stats -P"
+alias link="ln -s"
+alias shoot="kill -9"
+alias search="grep -iIr"
+alias exp="tmp=`mktemp -d`; cd $tmp"
+alias pexp="exp; virtualenv env;"
 
-    # reference
-    # find [dir] -name "[*.*]" -type f  -- list files with mask. Add delete to remove.
-    # netstat -nat -- show open ports.
-    # netstat -peant | grep ":[port]" -- find process which uses port.
+# reference
+# find [dir] -name "[*.*]" -type f  -- list files with mask. Add delete to remove.
+# netstat -nat -- show open ports.
+# netstat -peant | grep ":[port]" -- find process which uses port.
 
-# Git
-    alias push="git push"
-    alias pull="git pull"
-    alias fetch="git fetch"
-    alias rebase="git rebase"
-    alias merge="git merge"
-    alias checkout="git checkout"
-    alias branch="git branch"
-    alias reset="git reset"
-    alias stash="git stash"
-    alias commit="git commit"
-    alias diff="git diff"
-    alias add="git add"
-    alias status="git status"
-    alias log="git log"
+# ----------- Git -----------------
+alias push="git push"
+alias pull="git pull"
+alias fetch="git fetch"
+alias rebase="git rebase"
+alias merge="git merge"
+alias checkout="git checkout"
+alias branch="git branch"
+alias reset="git reset"
+alias stash="git stash"
+alias commit="git commit"
+alias diff="git diff"
+alias add="git add"
+alias status="git status"
+alias log="git log"
 
-    alias write="git add .; git commit"  # Warning! This command is actually ovewritten on dev.
-    alias revert="git checkout --"
-    alias amend="git commit --amend"
-    alias new="git checkout -b"
+alias write="git add .; git commit"  # Warning! This command is actually ovewritten on dev.
+alias revert="git checkout --"
+alias amend="git commit --amend"
+alias new="git checkout -b"
+
+# ===================== CUT HERE ====================
+
+{% if is_prod -%}
+alias cronlog="zgrep -i cron /var/log/syslog*"
+{%- endif %}
+
+# ----------- Git -----------------
+{% if is_dev -%}
+alias write="{{ scripts_path }}/fastcommit.sh"
+{%- endif %}
+
+# ----------- Provisioning -----------------
+{% if is_dev -%}
+alias provision="clear; cd {{ home }}/ansible-playbook-server && ./provision_dev.sh"
+alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev"
+{%- endif %}
+
+{% if is_prod -%}
+alias provision="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
+alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
+{%- endif %}
+
+# ----------- Django -----------------
+alias deploy="{{ scripts_path }}/deploy.sh"
+alias manage="./manage.py"
+{% if is_dev -%}
+alias develop="{{ scripts_path }}/develop.sh"
+alias qa="{{ scripts_path }}/tox.sh"
+alias makemessages="{{ scripts_path }}/makemessages.sh"
+alias loaddump="{{ scripts_path }}/loaddump.sh"
+{%- endif %}
+
+{% if is_prod -%}
+alias restart="{{ scripts_path }}/restart.sh"
+alias debug="{{ scripts_path }}/debug.sh"
+{%- endif %}
+
+# ============= Services ======================
+
+# ----------- Site -----------------
+alias sitedeploy="{{ scripts_path }}/deploy_site.sh"
+
 
 {% if is_dev -%}
-
-# ---------------------------------------------
-
-# Git
-    {% if is_dev -%}
-    alias write="{{ scripts_path }}/fastcommit.sh"
-    {%- endif %}
-
-# Provisioning
-    {% if is_dev -%}
-    alias provision="clear; cd {{ home }}/ansible-playbook-server && ./provision_dev.sh"
-    alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./provision_all.sh dev"
-    {%- endif %}
-
-    {% if is_prod -%}
-    alias provision="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_prod.sh"
-    alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
-    {%- endif %}
-# Django
-    alias deploy="{{ scripts_path }}/deploy.sh"
-    alias manage="./manage.py"
-    {% if is_dev -%}
-    alias develop="{{ scripts_path }}/develop.sh"
-    alias qa="{{ scripts_path }}/tox.sh"
-    alias makemessages="{{ scripts_path }}/makemessages.sh"
-    alias loaddump="{{ scripts_path }}/loaddump.sh"
-    {%- endif %}
-
-{% if is_prod -%}
-    alias restart="{{ scripts_path }}/restart.sh"
-    alias debug="{{ scripts_path }}/debug.sh"{%- endif %}# Services
-
-    # Site
-    alias sitedeploy="{{ scripts_path }}/deploy_site.sh"
-
-    {% if is_dev -%}
-    # Blog
-    alias blogdeploy="{{ scripts_path }}/blog_deploy.sh"
-    alias blogpost="{{ scripts_path }}/blog_post.sh"
-    alias blogpreview="{{ scripts_path }}/blog_preview.sh"
-    {%- endif %}
-
-
-{% if is_prod -%}
-# System
-
-    alias cronlog="zgrep -i cron /var/log/syslog*"
+# ----------- Blog -----------------
+alias blogdeploy="{{ scripts_path }}/blog_deploy.sh"
+alias blogpost="{{ scripts_path }}/blog_post.sh"
+alias blogpreview="{{ scripts_path }}/blog_preview.sh"
 {%- endif %}
