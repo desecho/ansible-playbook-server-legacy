@@ -9,4 +9,4 @@
   roles:
     - nodejs
     - swapfile
-    - common
+    - init

@@ -65,6 +65,8 @@ apt-get install pip
 pip install ansible==2.3.0.0
 ./bootstrap.sh
 
+Put your ansible-vault password to `/root/.vault_pass.txt`
+
 ./provision.sh init dev  # It is prod for production server instead
 exit
 vagrant ssh
