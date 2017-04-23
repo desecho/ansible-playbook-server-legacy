@@ -5,7 +5,7 @@
     mode: u=rwx,g=,o=
   vars:
     command: remove_unused_movies
-    track_code: track_code_remove_unused_movies
+    track_code: "{{ track_code_remove_unused_movies }}"
 
 - name: Generate command
   template:
@@ -14,7 +14,7 @@
     mode: u=rwx,g=,o=
   vars:
     command: update_movie_data
-    track_code: track_code_update_movie_data
+    track_code: "{{ track_code_update_movie_data }}"
 
 - name: Generate command
   template:
@@ -23,4 +23,4 @@
     mode: u=rwx,g=,o=
   vars:
     command: update_imdb_ratings
-    track_code: track_code_update_imdb_ratings
+    track_code: "{{ track_code_update_imdb_ratings }}"
