@@ -5,7 +5,7 @@ if [[ $# -eq 0 ]] ; then
     exit 0
 fi
 
-source /opt/$1/env/bin/activate
+source {{ home }}/$1/env/bin/activate
 cd /opt/$1/project/src
 ./manage.py makemessages
 ./manage.py makemessages -d djangojs

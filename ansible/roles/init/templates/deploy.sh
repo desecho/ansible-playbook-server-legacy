@@ -8,7 +8,7 @@ fi
 cd {{ home }}/$1
 git pull
 bower install --allow-root
-source /opt/$1/env/bin/activate
+source {{ home }}/$1/env/bin/activate
 pip install -r requirements.txt
 cd /opt/$1/project/src
 ./manage.py migrate

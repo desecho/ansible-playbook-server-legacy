@@ -1,4 +1,3 @@
-django_project_symlink_dest: "{{ home }}/{{ django_name }}"
 django_debug: yes
 mysql_root_password: password
 django_app_name: moviesapp
