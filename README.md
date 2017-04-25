@@ -35,10 +35,9 @@ Details
 ------------
 It has an initial provisioning which is run before everything else which is responsible for the base of the server. Then it has separate provisioning for each project.
 
-It installs ipdb, bower, git, pip globally. Ntp is enabled. Locale is set to en_US.UTF-8.
+It installs [ipdb][ipdb], [bower][bower], [git][git], [pip][pip], [tox][tox], [isort][isort], [npm][npm] globally. Ntp is enabled. Locale is set to en_US.UTF-8.
 The backups are being run every day. The logs are in /root/logs.
 Security packages are being updated constantly automatically and if restart is required it is done right after the backup script is finished.
-
 
 Installation
 ------------
@@ -186,3 +185,10 @@ Drawbacks
 [Grive]: https://github.com/Grive/grive
 [Google Drive]: https://drive.google.com
 [ansible-role-nodejs]: https://github.com/geerlingguy/ansible-role-nodejs
+[ipdb]: https://github.com/gotcha/ipdb
+[bower]: https://bower.io/
+[git]: https://git-scm.com/
+[pip]: https://github.com/pypa/pip
+[tox]: https://github.com/tox-dev/tox
+[isort]: https://github.com/timothycrosley/isort
+[npm]: https://www.npmjs.com/

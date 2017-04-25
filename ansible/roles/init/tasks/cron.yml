@@ -34,4 +34,4 @@
     special_time: daily
     state: present
     user: root
-    job: "{{ scripts_path }}/backup_cron.sh"
+    job: "{{ cron_path }}/backup.sh"
