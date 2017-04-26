@@ -1,4 +1,4 @@
- ansible-playbook-server
+ansible-playbook-server
 ==================
 *Setup and provision a server and a development machine with ansible effortlessly.*
 
@@ -41,7 +41,13 @@ Security packages are being updated constantly automatically and if restart is r
 
 Installation
 ------------
+
+Install [Vagrant][Vagrant] and [VirtualBox][VirtualBox].
+
 ```bash
+cp ansible-playbook-server/Vagrantfile .
+vagrant plugin install vagrant-vbguest
+vagrant up
 vagrant ssh
 ssh-keygen -t rsa -C desecho@gmail.com -N ''
 cat ~/.ssh/id_rsa.pub
@@ -188,3 +194,5 @@ Drawbacks
 [isort]: https://github.com/timothycrosley/isort
 [npm]: https://www.npmjs.com/
 [Ntp]: http://support.ntp.org/bin/view/Main/WebHome
+[VirtualBox]: https://www.virtualbox.org/
+[Vagrant]: https://www.vagrantup.com/
