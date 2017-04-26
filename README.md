@@ -17,7 +17,7 @@ It also provides a certain set of useful aliases.
 
 It uses [ansible-vault][ansible-vault] to manage secrets.
 It uses [Grive][Grive] and [Google Drive][Google Drive] for backup storage.
-It installs htop and iftop to monitor through CLI
+It installs htop and iftop to monitor through CLI.
 
 **Warning**: It suits my particular needs but might not be suitable for others. It is not perfect and it is not meant to be. It's also currently set up in a way that is not the most secure thing one might come up with. See "Drawbacks" below for details.
 
@@ -35,8 +35,8 @@ Details
 ------------
 It has an initial provisioning which is run before everything else which is responsible for the base of the server. Then it has separate provisioning for each project.
 
-It installs [ipdb][ipdb], [bower][bower], [git][git], [pip][pip], [tox][tox], [isort][isort], [npm][npm] globally. Ntp is enabled. Locale is set to en_US.UTF-8.
-The backups are being run every day. The logs are in /root/logs.
+It installs [ipdb][ipdb], [bower][bower], [git][git], [pip][pip], [tox][tox], [isort][isort], [npm][npm] globally. [Ntp][Ntp] is enabled. Locale is set to en_US.UTF-8.
+The backups are being run every day. The logs are in `/root/logs`.
 Security packages are being updated constantly automatically and if restart is required it is done right after the backup script is finished.
 
 Installation
@@ -73,9 +73,10 @@ provisionall
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@desecho.org  # Set up connection with your production server
 ?
 ```
-Copy aliases to your hosts `~/.bash_aliases` file. (until the line)
+Copy aliases to your hosts `~/.bash_aliases` file (until the line).
 
 For development - install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org/?#toc_515).
+
 For production - install [Grive][Grive]. The process is described [here](https://blog.desecho.org/?#toc_516).
 
 Usage
@@ -93,10 +94,10 @@ provisionall
 ```
 Commands
 ------------
-Here is a short list of available aliases. For the full list, run `?`
+Here is a short list of available aliases. For the full list, run `?`.
 
 ### Django
-Can be run only from the "home" directory: (it is in fact /root for root and /home/ubuntu for ubuntu but we make it really cozy inside /vagrant)
+Can be run only from the "home" directory: (it is in fact `/root` for root and `/home/ubuntu` for ubuntu but we make it really cozy inside `/vagrant`)
 
 ```bash
 . workon movies
@@ -107,15 +108,9 @@ Aliases to be run from anywhere.
 
 ```bash
 develop movies  # Start development server
-deploy movies  # Light version
+deploy movies  # Light version of provisioning. (if there are no changes to the ansible playbook related to the project)
 tox movies
 makemessages movies
-```
-
-### Python
-
-```bash
-clean movies # It is used to run isort and pyCharm's autoformatter on the host machine
 ```
 
 ### Blog
@@ -146,10 +141,10 @@ Playbooks used
 
 Still not automated
 ------------
-* [Octopress][Octopress] installation.
-* [Grive][Grive] installation.
-* It does not set up connection to your production server.
-* It does not create the ssh key.
+* Octopress installation
+* Grive installation
+* It does not set up connection to your production server
+* It does not create the ssh key
 
 
 Drawbacks
@@ -160,7 +155,7 @@ Drawbacks
 * Questionable backup solution
 * No monitoring (just for cron *will be done soon)
 * There are a few issues which have not been resolved for the moment
-    * `provisionall` command does not stop on error so you need to visually make sure there are no red lines on the screen.
+    * `provisionall` command does not stop on error so you need to visually make sure there are no red lines on the screen
     * Ansible event statuses shows change in places it shouldn't do so sometimes
     * It restarts nginx multiple times while provisioning
 
@@ -192,3 +187,4 @@ Drawbacks
 [tox]: https://github.com/tox-dev/tox
 [isort]: https://github.com/timothycrosley/isort
 [npm]: https://www.npmjs.com/
+[Ntp]: http://support.ntp.org/bin/view/Main/WebHome
