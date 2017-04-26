@@ -1,5 +1,5 @@
 #!/bin/bash
 
 if [ -f /var/run/reboot-required ]; then
-  reboot
+  /sbin/reboot
 fi
