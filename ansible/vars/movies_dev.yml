@@ -1,6 +1,7 @@
 django_debug: yes
 mysql_root_password: password
 django_app_name: moviesapp
+django_project_path: "/opt/{{ django_name }}/project"
 django_create_uwsgi_config: no
-
+django_requirements_file: "{{ django_project_path }}/requirements-dev.txt"
 raven_dsn: ''

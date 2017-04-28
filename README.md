@@ -56,6 +56,9 @@ vagrant ssh
 sudo su
 ssh-keygen -t rsa -C desecho@gmail.com -N ''
 cat ~/.ssh/id_rsa.pub
+
+# Transfer ssh-key to ubuntu user to be able to push using ubuntu user
+cp ~/.ssh/* /home/ubuntu/.ssh/
 ```
 Add a key on the [github key settings page](https://github.com/settings/keys)
 
