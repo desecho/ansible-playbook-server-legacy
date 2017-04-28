@@ -1,6 +1,7 @@
 - include: packages.yml
 - include: scripts.yml
 - include: configs.yml
+- include: pip.yml
 
 - include: cron.yml
   when: is_prod
@@ -13,20 +14,6 @@
 
 - name: Fix locale
   command: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-
-- name: Install global pip packages
-  pip:
-    name: "{{ item }}"
-  with_items:
-    - ansible-vault
-    - ipdb
-
-- name: Install global pip packages for development
-  pip:
-    name: "{{ item }}"
-  with_items:
-    - tox
-    - isort
 
 - name: Ensure required services are enabled and running
   service:

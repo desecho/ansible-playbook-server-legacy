@@ -1,4 +1,5 @@
-Host do
-    HostName desecho.org
+Host prod
+    HostName {{ host }}
     User root
     ForwardAgent yes
+    StrictHostKeyChecking no

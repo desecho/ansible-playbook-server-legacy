@@ -6,5 +6,5 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 yesterday=`date -d "yesterday" '+%d-%m-%Y'`
-scp "do:/var/backups/$yesterday/$1.$yesterday.sql.gz" /tmp/dump.sql.gz
+scp "prod:/var/backups/$yesterday/$1.$yesterday.sql.gz" /tmp/dump.sql.gz
 gunzip -c /tmp/dump.sql.gz | /opt/$1/restoredb.sh

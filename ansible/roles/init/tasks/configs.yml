@@ -15,11 +15,6 @@
     path: ~/.bashrc
     line: . ~/.bash_changes
 
-# - name: Download special templates for git shell improvements
-#   get_url:
-#     url: https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.prompt.sh
-#     dest: ~/.git_shell
-
 # We need to copy the configs for ubuntu users as well for development
 - name: Generate configs for development
   template:

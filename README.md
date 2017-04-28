@@ -42,59 +42,79 @@ Security packages are being updated constantly automatically and if restart is r
 Installation
 ------------
 
+Development
+--------------
 Install [Vagrant][Vagrant] and [VirtualBox][VirtualBox].
 
 ```bash
+mkdir vm
+git clone git@github.com:desecho/ansible-playbook-server.git
 cp ansible-playbook-server/Vagrantfile .
 vagrant plugin install vagrant-vbguest
 vagrant up
 vagrant ssh
+sudo su
 ssh-keygen -t rsa -C desecho@gmail.com -N ''
 cat ~/.ssh/id_rsa.pub
-sudo su
-cp ~/.ssh/id_rsa.pub /root/.ssh/id_rsa.pub
 ```
 Add a key on the [github key settings page](https://github.com/settings/keys)
 
-```bash
-cd /vagrant
-git clone https://github.com/desecho/ansible-playbook-server.git
-```
 You need to make changes to [common.yml][common.yml] before you start.
+Also put your ansible-vault password to ``
 
 ```bash
-nano /vagrant/ansible-playbook-server/ansible/vars/common.yml
-
-cd ansible-playbook-server
-apt-get install pip
-pip install ansible==2.3.0.0
-./bootstrap.sh
-
-Put your ansible-vault password to `/root/.vault_pass.txt`
-
-./provision.sh init dev  # It is prod for production server instead
+cd /vagrant/ansible-playbook-server
+./init/provision.sh
+./init/init_password.sh password
+./provision.sh init dev
+exit
 exit
 vagrant ssh
 provisionall
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@desecho.org  # Set up connection with your production server
+ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
 ?
 ```
 Copy aliases to your hosts `~/.bash_aliases` file (until the line).
 
-For development - install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org/?#toc_515).
+Install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org/?#toc_515).
 
-For production - install [Grive][Grive]. The process is described [here](https://blog.desecho.org/?#toc_516).
+Production
+--------------
+
+```bash
+ssh-keygen -t rsa -C desecho@gmail.com -N ''
+cat ~/.ssh/id_rsa.pub
+```
+
+Add a key on the [github key settings page](https://github.com/settings/keys)
+
+```bash
+git clone git@github.com:desecho/ansible-playbook-server.git
+cd /root/ansible-playbook-server
+./init/provision.sh
+./init/init_password.sh password
+./provision.sh init prod
+exit
+```
+
+Reconnect to the server
+
+```bash
+provisionall
+```
+
+Install [Grive][Grive]. The process is described [here](https://blog.desecho.org/?#toc_516).
 
 Usage
 ------------
 ```bash
-# Full provisioning
+# Full provisioning of each service
 provision init
 provision movies
 provision site
 provision blog
 ```
-# Provision all services
+# Provision all services at once
 ```bash
 provisionall
 ```
@@ -175,7 +195,7 @@ Drawbacks
 [nginx]: https://www.nginx.com/resources/wiki/
 [ansible-vault]: https://github.com/jptomo/ansible-vault
 [common.yml]: https://github.com/desecho/ansible-playbook-server/blob/master/ansible/vars/common.yml
-[acme-nginx]: https://github.com/hsoft/acme-nginx
+[acme-nginx]: https://github.com/hsoft/ansible-acme-nginx
 [ansible-swapfile]: https://github.com/kamaln7/ansible-swapfile
 [ansible-django]: https://github.com/desecho/ansible-django
 [ansible-role-fail2ban]: https://github.com/infOpen/ansible-role-fail2ban

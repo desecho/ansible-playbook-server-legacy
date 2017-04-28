@@ -1,0 +1,19 @@
+- name: Upgrade pip
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: Install global pip packages
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - ansible-vault
+    - ipdb
+    - pdbpp
+
+- name: Install global pip packages for development
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - tox
+    - isort

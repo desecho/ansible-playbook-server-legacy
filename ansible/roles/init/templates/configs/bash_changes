@@ -16,8 +16,5 @@ cd () {
     fi
 }
 
+cd /vagrant
 {%- endif %}
-
-# if [ -f "~/.git_shell" ] ; then
-#   . ~/.git_shell
-# fi

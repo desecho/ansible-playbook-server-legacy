@@ -5,6 +5,7 @@
       - vars/dev.yml
       - vars/common.yml
       - vars/init.yml
+      - vars/init_dev.yml
 
   roles:
     - nodejs

@@ -5,7 +5,7 @@ django_name: movies
 
 nodejs_package_json_path: "{{ home }}/{{ django_name }}"
 django_project_symlink_dest: "{{ nodejs_package_json_path }}"
-django_env: "{{ nodejs_package_json_path }}/env"
+# django_env: "{{ nodejs_package_json_path }}/env"
 
 django_project_name: "{{ django_name }}"
 django_env_settings_extra: |
