@@ -28,3 +28,4 @@ django_env_settings_extra: |
 
   IS_VK_DEV = False
   INTERNAL_IPS = ['10.0.0.1']
+  # IS_VK_DEV = True
