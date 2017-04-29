@@ -27,5 +27,6 @@ django_env_settings_extra: |
   HOST_MOVIES_TEST = 'moviestest.pagekite.me'
 
   IS_VK_DEV = False
-  INTERNAL_IPS = ['10.0.0.1']
+  INTERNAL_IPS = []
   # IS_VK_DEV = True
+  # INTERNAL_IPS = ['10.0.0.1']
