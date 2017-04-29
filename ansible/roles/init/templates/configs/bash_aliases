@@ -101,6 +101,6 @@ alias blogdeploy="{{ scripts_path }}/blog_deploy.sh"
 alias blogpost="{{ scripts_path }}/blog_post.sh"
 alias blogpreview="{{ scripts_path }}/blog_preview.sh"
 
-------------- Movies -----------------
+# ------------- Movies -----------------
 alias pagekitemovies="pagekite.py 8000 moviestest.pagekite.me"
 {%- endif %}
