@@ -1,4 +1,4 @@
-common_required_packages:
+required_packages:
   - rsync
   - sudo
   - build-essential
@@ -10,10 +10,12 @@ common_required_packages:
   - htop
   - iftop
 
-# Packages to install in addition to `common_required_packages`
-common_extra_packages: []
+required_packages_dev:
+  # for pypi:
+  - python3-pip
+  - twine
 
-common_enabled_services:
+enabled_services:
   - ntp
 
 timezone: US/Eastern

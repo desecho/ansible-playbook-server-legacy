@@ -20,7 +20,7 @@
     name: "{{ item }}"
     enabled: yes
     state: started
-  with_items: "{{ common_enabled_services }}"
+  with_items: "{{ enabled_services }}"
 
 - name: Make sure we have ubuntu host for our vm
   lineinfile:
