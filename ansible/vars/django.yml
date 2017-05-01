@@ -1,6 +1,6 @@
 django_user: root
 django_dbtype: mariadb
-django_ispython3: no
+django_ispython3: yes
 django_dbpass: "{{ mysql_root_password }}"
 django_project_symlink_dest: "{{ home }}/{{ django_name }}"
 mysql_databases:

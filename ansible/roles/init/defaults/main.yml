@@ -4,6 +4,7 @@ required_packages:
   - build-essential
   - git
   - python-pip  # for ansible-vault
+  - libmysqlclient-dev # for python3 mysqlclient
   - ntp
   - unattended-upgrades  # make sure we get security updates automatically
   # for monitoring:
