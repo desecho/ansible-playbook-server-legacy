@@ -1,6 +1,7 @@
 required_packages:
   - rsync
   - sudo
+  - mc
   - build-essential
   - git
   - python-pip  # for ansible-vault
