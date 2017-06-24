@@ -30,7 +30,7 @@ django_env_settings_extra: |
   RAVEN_DSN = '{{ raven_dsn }}'
 
   GOOGLE_ANALYTICS_ID = 'UA-655582-5'
-  HOST_MOVIES_TEST = 'moviestest.pagekite.me'
+  HOST_MOVIES_TEST = 'moviestest.ngrok.io'
 
   IS_VK_DEV = False
   INTERNAL_IPS = []
