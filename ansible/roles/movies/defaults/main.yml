@@ -1,5 +1,4 @@
 root_path: "/opt/{{ django_name }}"
-cache_path: "{{ root_path }}/cache"
 
 python: "{{ root_path }}/env/bin/python"
 manage: "{{ root_path }}/project/src/manage.py"

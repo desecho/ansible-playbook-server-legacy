@@ -1,0 +1,15 @@
+- name: Install a fully functional uWSGI/nginx server for Django deployment on development. PyFavorite Project.
+  hosts: localhost
+
+  vars_files:
+      - vars/dev.yml
+      - vars/common.yml
+      - vars/pyfavorite.yml
+      - vars/pyfavorite_dev.yml
+      - vars/django.yml
+
+  roles:
+    - nodejs
+    - role: mysql
+      become: yes
+    - django

@@ -21,6 +21,7 @@
     mode: u=rwx,g=,o=
   with_items:
     - workon
+    - workon2
 
 - name: Generate scripts for development
   template:
@@ -29,6 +30,7 @@
     mode: u=rwx,g=,o=
   with_items:
     - develop.sh
+    - develop2.sh
     - tox.sh
     - makemessages.sh
     - fastcommit.sh
