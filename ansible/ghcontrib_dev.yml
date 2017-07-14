@@ -1,0 +1,16 @@
+- name: Install a fully functional uWSGI/nginx server for Django deployment on development. GHContrib Project.
+  hosts: localhost
+
+  vars_files:
+      - vars/dev.yml
+      - vars/common.yml
+      - vars/ghcontrib_dev_secrets.yml
+      - vars/ghcontrib.yml
+      - vars/ghcontrib_dev.yml
+      - vars/django.yml
+
+  roles:
+    - nodejs
+    - role: mysql
+      become: yes
+    - django
