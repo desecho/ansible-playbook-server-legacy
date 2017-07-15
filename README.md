@@ -30,8 +30,9 @@ It is currently used to provision the following projects:
 
 Requirements
 ------------
-* Ansible 2.3.0.0
-* Ubuntu 16.04
+* [Ansible][Ansible] 2.3.0.0
+* [Ubuntu][Ubuntu] 16.04
+
 
 Details
 ------------
@@ -221,3 +222,5 @@ Drawbacks
 [VirtualBox]: https://www.virtualbox.org/
 [Vagrant]: https://www.vagrantup.com/
 [githubcontrib.com]: https://githubcontrib.com/
+[Ansible]: https://www.ansible.com/
+[Ubuntu]: https://www.ubuntu.com/
