@@ -64,7 +64,8 @@ You need to make changes to [common.yml][common.yml] before you start.
 ```bash
 cd /vagrant/ansible-playbook-server
 ./init/provision.sh
-./init/init_password.sh password
+./bootstrap.sh
+./init/init_password.sh password  # password for ansible-vault
 ./provision.sh init dev
 exit
 exit
@@ -90,8 +91,10 @@ Add a key on the [github key settings page](https://github.com/settings/keys)
 ```bash
 git clone git@github.com:desecho/ansible-playbook-server.git
 cd /root/ansible-playbook-server
+apt-get update
 ./init/provision.sh
-./init/init_password.sh password
+./bootstrap.sh
+./init/init_password.sh password  # password for ansible-vault
 ./provision.sh init prod
 exit
 ```
