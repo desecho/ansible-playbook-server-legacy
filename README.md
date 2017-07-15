@@ -25,6 +25,8 @@ It is currently used to provision the following projects:
 * [Movies][Movies]
 * [IT Blog][IT Blog]
 * [desecho.org][desecho.org]
+* [GitHub Contrib][https://githubcontrib.com/]
+* pyfavorite
 
 Requirements
 ------------
@@ -76,7 +78,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production 
 ```
 Copy aliases to your hosts `~/.bash_aliases` file (until the line).
 
-Install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org/?#toc_515).
+Install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org).
 
 Production
 --------------
