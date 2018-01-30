@@ -1,0 +1,8 @@
+- name: Install generic site
+  hosts: localhost
+
+  vars:
+      nginx_catchall_enable: yes
+
+  roles:
+    - nginx
