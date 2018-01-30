@@ -3,6 +3,7 @@
 
   vars:
       nginx_catchall_enable: yes
+      nginx_delete_default_site: yes
 
   roles:
     - nginx
