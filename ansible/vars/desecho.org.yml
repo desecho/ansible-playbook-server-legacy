@@ -1,2 +1,4 @@
 site_name: desecho.org
+
 domain_name: "{{ site_name }}"
+extra_domain_names: "www.{{ site_name }}"

@@ -25,7 +25,7 @@ It is currently used to provision the following projects:
 * [Movies][Movies]
 * [IT Blog][IT Blog]
 * [desecho.org][desecho.org]
-* [GitHub Contrib][githubcontrib.com]
+* [GitHub Contrib][Githubcontrib]
 * pyfavorite
 
 Requirements
@@ -221,6 +221,6 @@ Drawbacks
 [Ntp]: http://support.ntp.org/bin/view/Main/WebHome
 [VirtualBox]: https://www.virtualbox.org/
 [Vagrant]: https://www.vagrantup.com/
-[githubcontrib.com]: https://githubcontrib.com/
+[Githubcontrib]: https://githubcontrib.desecho.org/
 [Ansible]: https://www.ansible.com/
 [Ubuntu]: https://www.ubuntu.com/
