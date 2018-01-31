@@ -11,6 +11,8 @@ required_packages:
   # for monitoring:
   - htop
   - iftop
+  - software-properties-common # to install python 3.6
+  - python-software-properties # to install python 3.6
 
 required_packages_dev:
   # for pypi:
