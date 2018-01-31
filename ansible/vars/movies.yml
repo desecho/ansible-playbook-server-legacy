@@ -27,6 +27,7 @@ django_env_settings_extra: |
   SOCIAL_AUTH_FACEBOOK_SECRET = '{{ fb_oauth2_secret }}'
 
   TMDB_KEY = '{{ tmdb_key }}'
+  OMDB_KEY = '{{ omdb_key }}'
   RAVEN_DSN = '{{ raven_dsn }}'
 
   GOOGLE_ANALYTICS_ID = 'UA-655582-5'
