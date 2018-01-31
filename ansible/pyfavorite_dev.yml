@@ -1,4 +1,4 @@
-- name: Install a fully functional uWSGI/nginx server for Django deployment on development. PyFavorite Project.
+- name: Install Django development environment. PyFavorite Project.
   hosts: localhost
 
   vars_files:

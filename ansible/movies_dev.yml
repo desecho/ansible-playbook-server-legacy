@@ -1,4 +1,4 @@
-- name: Install a fully functional uWSGI/nginx server for Django deployment on development. Movies Project.
+- name: Install Django development environment. Movies Project.
   hosts: localhost
 
   vars_files:
