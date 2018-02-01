@@ -3,12 +3,6 @@
     name: pip
     extra_args: --upgrade
 
-- name: Upgrade pip3
-  pip:
-    name: pip
-    extra_args: --upgrade
-    executable: pip3
-
 - name: Install global pip packages
   pip:
     name: "{{ item }}"
@@ -24,8 +18,3 @@
     - tox
     - isort
   when: is_dev
-
-- name: Install pymysql
-  pip:
-    name: mysqlclient
-    executable: pip3
