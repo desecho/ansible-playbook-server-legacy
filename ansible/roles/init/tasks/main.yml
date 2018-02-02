@@ -1,9 +1,9 @@
-- include: packages.yml
-- include: scripts.yml
-- include: configs.yml
-- include: pip.yml
+- include_tasks: packages.yml
+- include_tasks: scripts.yml
+- include_tasks: configs.yml
+- include_tasks: pip.yml
 
-- include: cron.yml
+- include_tasks: cron.yml
   when: is_prod
 
 - name: Set timezone
