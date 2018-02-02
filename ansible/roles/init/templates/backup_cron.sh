@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -eu
 info() { while IFS='' read -r line; do echo "$(date) - system - backup - $line" >> {{ logs_path }}/errors.log; done; };
 error() { while IFS='' read -r line; do echo "$(date) - system - backup - $line" >> {{ logs_path }}/errors.log; done; };
 

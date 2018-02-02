@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 ### MySQL Info ###
 MYSQL_USER="root"

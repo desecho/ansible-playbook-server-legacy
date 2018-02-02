@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 if [ $2 = "prod" ]; then
 ./scripts/moveout_nginx_configs.sh
 ansible-playbook ansible/site_generic.yml --connection=local -i inventory

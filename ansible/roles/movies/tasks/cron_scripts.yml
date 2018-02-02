@@ -1,6 +1,6 @@
 - name: Generate command
   template:
-    src: "command.sh"
+    src: command.sh
     dest: "{{ cron_path }}/remove_unused_movies.sh"
     mode: u=rwx,g=,o=
   vars:
@@ -9,7 +9,7 @@
 
 - name: Generate command
   template:
-    src: "command.sh"
+    src: command.sh
     dest: "{{ cron_path }}/update_movie_data.sh"
     mode: u=rwx,g=,o=
   vars:
@@ -18,7 +18,7 @@
 
 - name: Generate command
   template:
-    src: "command.sh"
+    src: command.sh
     dest: "{{ cron_path }}/update_imdb_ratings.sh"
     mode: u=rwx,g=,o=
   vars:

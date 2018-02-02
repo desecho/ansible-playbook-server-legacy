@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 if [[ $# -eq 0 ]] ; then
     echo "Enter project name"
     exit 0

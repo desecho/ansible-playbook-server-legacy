@@ -1,4 +1,6 @@
 #!/bin/bash
+
+set -eu
 # Google Drive Backup
 #
 # credit: Rafael Goulart <rafaelgou@gmail.com>

@@ -10,7 +10,7 @@
   command: "timedatectl set-timezone {{ timezone }}"
 
 - name: Install npm
-  shell: npm -g install npm@4.5.0
+  shell: "npm -g install npm@{{ npm_version }}"
 
 - name: Fix locale
   command: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8

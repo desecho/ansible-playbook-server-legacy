@@ -4,6 +4,6 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
-    - "blog_deploy.sh"
-    - "blog_post.sh"
-    - "blog_preview.sh"
+    - blog_deploy.sh
+    - blog_post.sh
+    - blog_preview.sh
