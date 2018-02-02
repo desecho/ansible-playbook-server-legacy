@@ -2,5 +2,5 @@
 
 set -eu
 
-mkdir /tmp/nginx_confs
+mkdir -p /tmp/nginx_confs
 mv /etc/nginx/sites-enabled/* /tmp/nginx_confs
