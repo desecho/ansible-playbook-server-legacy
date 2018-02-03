@@ -6,4 +6,4 @@ swapfile_size: 4GB
 
 nodejs_npm_global_packages:
   - name: bower
-    version: 1.8.0
+  - name: npm-check-updates

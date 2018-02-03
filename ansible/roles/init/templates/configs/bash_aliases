@@ -26,6 +26,11 @@ alias search="grep -iIr"
 alias exp="tmp=`mktemp -d`; cd $tmp"
 alias pexp="exp; virtualenv env;"
 
+# ----------- Development -----------------
+{% if is_dev -%}
+alias bowerupdate="ncu --packageManager bower -u"
+{%- endif %}
+
 # reference
 # find [dir] -name "[*.*]" -type f  -- list files with mask. Add delete to remove.
 # netstat -nat -- show open ports.
