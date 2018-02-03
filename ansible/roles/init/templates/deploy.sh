@@ -9,7 +9,7 @@ cd {{ home }}/$1
 git pull
 bower install --allow-root
 source /opt/$1/env/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt --exists-action s
 cd /opt/$1/project/src
 ./manage.py migrate
 ./manage.py collectstatic --noinput
