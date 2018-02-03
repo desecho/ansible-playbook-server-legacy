@@ -15,4 +15,5 @@
   with_items:
     - tox
     - isort
+    - yapf
   when: is_dev
