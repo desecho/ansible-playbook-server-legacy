@@ -7,6 +7,7 @@
     - ansible-vault
     - ipdb
     - pdbpp
+    - virtualenv
 
 - name: Install/Upgrade global pip packages for development
   pip:

@@ -182,14 +182,15 @@ Still not automated
 Drawbacks
 ------------
 * It only uses root user to simplify things. Note: there is still ubuntu user in the VM but it is currently there only because I didn't find a way to get rid of it
-* No CI support
+* No real CI/CD
 * Deployment happens manualy. It is easy to do but you still have to connect directly to the server and run commands
 * Questionable backup solution
-* No monitoring (just for cron *will be done soon)
 * There are a few issues which have not been resolved for the moment
     * `provisionall` command does not stop on error so you need to visually make sure there are no red lines on the screen
     * Ansible event statuses shows change in places it shouldn't do so sometimes
     * It restarts nginx multiple times while provisioning
+    * You have to run initial `provision init` command 2 times to make it work.
+    * It is not optimized.
 
 [Movies]: https://github.com/desecho/movies
 [Let’s Encrypt]: https://letsencrypt.org/
@@ -222,6 +223,6 @@ Drawbacks
 [Ntp]: http://support.ntp.org/bin/view/Main/WebHome
 [VirtualBox]: https://www.virtualbox.org/
 [Vagrant]: https://www.vagrantup.com/
-[Githubcontrib]: https://githubcontrib.desecho.org/
+[Githubcontrib]: https://github.com/desecho/ghcontrib
 [Ansible]: https://www.ansible.com/
 [Ubuntu]: https://www.ubuntu.com/
