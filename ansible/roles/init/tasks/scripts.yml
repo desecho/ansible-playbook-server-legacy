@@ -13,6 +13,7 @@
     mode: u=rwx,g=,o=
   with_items:
     - deploy.sh
+    - deploy2.sh
 
 - name: Generate scripts
   template:

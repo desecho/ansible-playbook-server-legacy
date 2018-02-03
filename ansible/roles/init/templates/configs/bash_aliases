@@ -81,6 +81,7 @@ alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.
 
 # ----------- Django -----------------
 alias deploy="{{ scripts_path }}/deploy.sh"
+alias deploy2="{{ scripts_path }}/deploy2.sh"
 alias manage="./manage.py"
 {% if is_dev -%}
 alias develop="{{ scripts_path }}/develop.sh"
