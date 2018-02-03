@@ -6,9 +6,11 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 cd {{ home }}/$1
+
 {% if is_prod -%}
 git pull
 {%- endif %}
+
 bower install --allow-root
 source /opt/$1/env/bin/activate
 pip install -r requirements.txt --exists-action s
