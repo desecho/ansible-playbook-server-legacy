@@ -97,8 +97,8 @@ cd /root/ansible-playbook-server
 apt-get update
 ./init/provision.sh
 ./bootstrap.sh
-./init/init_password.sh password  # password for ansible-vault
-./provision.sh init prod
+./init/init_password.sh password  # Password for ansible-vault
+./provision.sh init prod  # You might need to run it twice in case of an error
 exit
 ```
 
@@ -118,6 +118,7 @@ provision init
 provision movies
 provision site
 provision blog
+provision ghcontrib
 ```
 # Provision all services at once
 ```bash
