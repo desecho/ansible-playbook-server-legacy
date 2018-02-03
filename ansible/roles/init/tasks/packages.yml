@@ -17,15 +17,3 @@
 - name: Ensure required packages for development are present
   apt: "name={{ item }} state=present"
   with_items: "{{ required_packages_dev }}"
-
-- name: Add repository for python 3.6 installation
-  shell: add-apt-repository ppa:jonathonf/python-3.6 -y
-
-- name: apt-get update
-  apt: update_cache=yes
-
-- name: Ensure python 3.6 is installed
-  apt: "name={{ item }} state=present"
-  with_items:
-    - python3.6
-    - python3.6-dev
