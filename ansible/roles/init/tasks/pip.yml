@@ -17,4 +17,5 @@
     - tox
     - isort
     - yapf
+    - autoflake
   when: is_dev
