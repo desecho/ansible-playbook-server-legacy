@@ -191,6 +191,7 @@ Drawbacks
     * It restarts nginx multiple times while provisioning
     * You have to run initial `provision init` command 2 times to make it work.
     * It is not optimized.
+    * It breaks the server for some time while provisioning.
 
 [Movies]: https://github.com/desecho/movies
 [Let’s Encrypt]: https://letsencrypt.org/

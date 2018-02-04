@@ -88,6 +88,7 @@ alias develop="{{ scripts_path }}/develop.sh"
 alias develop2="{{ scripts_path }}/develop2.sh"
 alias qa="{{ scripts_path }}/tox.sh"
 alias makemessages="{{ scripts_path }}/makemessages.sh"
+alias makemessages2="{{ scripts_path }}/makemessages2.sh"
 alias loaddump="{{ scripts_path }}/loaddump.sh"
 {%- endif %}
 
