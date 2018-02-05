@@ -15,6 +15,7 @@ django_env_settings_extra: |
   SOCIAL_AUTH_GITHUB_SECRET = '{{ gh_secret }}'
   GITHUB_API_KEY = '{{ gh_api_key }}'
   RAVEN_DSN = '{{ raven_dsn }}'
+  GOOGLE_ANALYTICS_ID = 'UA-655582-8'
 
   INTERNAL_IPS = []
   # INTERNAL_IPS = ['10.0.0.1']
