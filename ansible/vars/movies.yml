@@ -15,8 +15,6 @@ django_project_symlink_dest: "{{ nodejs_package_json_path }}"
 
 django_project_name: "{{ django_name }}"
 django_env_settings_extra: |
-  ADMIN_NAME = '{{ full_name }}'
-  ADMIN_EMAIL = '{{ email }}'
   SOCIAL_AUTH_VK_APP_KEY = '{{ vk_app_key }}'
   SOCIAL_AUTH_VK_APP_SECRET = '{{ vk_app_secret }}'
 
