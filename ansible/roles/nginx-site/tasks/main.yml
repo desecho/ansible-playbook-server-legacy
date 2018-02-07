@@ -11,10 +11,9 @@
   notify:
     - nginx restart
 
-- name: Create symbolic links for sites config to enable sites
-  file:
-    path: "/etc/nginx/sites-enabled/{{ site_name }}.conf"
-    state: link
+- name: Enable nginx site
+  copy:
     src: "/etc/nginx/sites-available/{{ site_name }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ site_name }}.conf"
   notify:
     - nginx restart

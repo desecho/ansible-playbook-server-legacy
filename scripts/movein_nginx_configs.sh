@@ -2,5 +2,5 @@
 
 set -eu
 
-rsync -i /tmp/nginx_confs /etc/nginx/sites-enabled
+rsync -r /tmp/nginx_confs/* /etc/nginx/sites-enabled
 rm -R /tmp/nginx_confs
