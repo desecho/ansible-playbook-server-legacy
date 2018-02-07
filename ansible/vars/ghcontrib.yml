@@ -8,7 +8,6 @@ django_project_symlink_dest: "{{ nodejs_package_json_path }}"
 django_src_path: "{{ django_project_path }}"
 django_project_name: "{{ django_name }}_project"
 django_env_settings_extra: |
-  ADMIN_NAME = '{{ full_name }}'
   ADMIN_EMAIL = '{{ email }}'
 
   SOCIAL_AUTH_GITHUB_KEY = '{{ gh_key }}'
