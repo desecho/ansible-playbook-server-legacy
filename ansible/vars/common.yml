@@ -6,4 +6,4 @@ logs_path: "{{ home }}/logs"
 cron_path: "{{ scripts_path }}/cron"
 
 # Used for init and movies roles
-nodejs_version: 7.x
+nodejs_version: 8.x
