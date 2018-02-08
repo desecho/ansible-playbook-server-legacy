@@ -10,7 +10,7 @@ cd /opt/$1/project
 ./manage.py makemessages
 
 if [ $1 = "movies" ]; then
-   ./manage.py makemessages -d djangojs --ignore=moviesapp/static/bower/*
+   ./manage.py makemessages -d djangojs --ignore=moviesapp/static/vendor/*
 else
   ./manage.py makemessages -d djangojs
 fi

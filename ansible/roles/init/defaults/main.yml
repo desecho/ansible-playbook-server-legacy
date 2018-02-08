@@ -23,5 +23,3 @@ enabled_services:
 timezone: US/Eastern
 is_prod: no
 is_dev: no
-
-npm_version: 4.5.0

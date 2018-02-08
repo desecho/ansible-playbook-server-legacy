@@ -43,4 +43,4 @@ django_env_settings_extra: |
   EMAIL_HOST_PASSWORD = '{{ gmail_smtp_password }}'
   EMAIL_PORT = 587
 
-bower: yes
+yarn: yes

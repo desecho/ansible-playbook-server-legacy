@@ -11,7 +11,7 @@ cd {{ home }}/$1
 git pull
 {%- endif %}
 
-bower install --allow-root
+./yarn_install.sh
 source /opt/$1/env/bin/activate
 pip install -r requirements.txt --exists-action s
 cd /opt/$1/project/src

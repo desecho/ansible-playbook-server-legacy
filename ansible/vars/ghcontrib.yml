@@ -19,4 +19,4 @@ django_env_settings_extra: |
   INTERNAL_IPS = []
   # INTERNAL_IPS = ['10.0.0.1']
 
-bower: yes
+yarn: yes

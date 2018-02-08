@@ -1,5 +1,5 @@
 Host prod
-    HostName {{ host }}
+    HostName {{ prod_hostname }}
     User root
     ForwardAgent yes
     StrictHostKeyChecking no

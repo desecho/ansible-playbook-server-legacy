@@ -10,8 +10,14 @@
 - name: Set timezone
   command: "timedatectl set-timezone {{ timezone }}"
 
+- name: Check if npm is installed
+  stat:
+    path: /usr/bin/npm
+  register: npm_binary
+
 - name: Install npm
-  shell: "npm -g install npm@{{ npm_version }}"
+  shell: npm -g install npm
+  when: not npm_binary.stat.exists
 
 - name: Fix locale
   command: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8

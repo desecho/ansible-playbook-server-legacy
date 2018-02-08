@@ -1,1 +1,8 @@
-host: desecho.org
+prod_hostname: desecho.org
+
+nodejs_npm_global_packages:
+  - name: npm
+  - name: yarn
+  - name: npm-check-updates
+  - name: csscomb
+  - name: jsbeautify

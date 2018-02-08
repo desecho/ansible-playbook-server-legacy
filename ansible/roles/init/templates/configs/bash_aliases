@@ -28,7 +28,7 @@ alias pexp="exp; virtualenv env;"
 
 # ----------- Development -----------------
 {% if is_dev -%}
-alias bowerupdate="ncu --packageManager bower -u"
+alias yarnupdate="ncu -u"
 {%- endif %}
 
 # reference

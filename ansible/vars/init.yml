@@ -3,7 +3,4 @@ nginx_catchall_enable: yes
 nginx_catchall_redirects_to_https: no
 
 swapfile_size: 4GB
-
-nodejs_npm_global_packages:
-  - name: bower
-  - name: npm-check-updates
+nodejs_version: 8.x
