@@ -5,6 +5,7 @@
       - vars/prod.yml
       - vars/common.yml
       - vars/init.yml
+      - vars/init_prod.yml
       - vars/init_prod_secrets.yml
 
   roles:
