@@ -21,3 +21,11 @@
     state: present
     user: root
     job: "{{ cron_path }}/update_imdb_ratings.sh"
+
+- name: Add update_vk_avatars command to cron
+  cron:
+    name: update_vk_avatars
+    special_time: daily
+    state: present
+    user: root
+    job: "{{ cron_path }}/update_vk_avatars.sh"

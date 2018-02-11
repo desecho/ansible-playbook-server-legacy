@@ -1,4 +1,4 @@
-- name: Generate command
+- name: Generate command remove_unused_movies
   template:
     src: command.sh
     dest: "{{ cron_path }}/remove_unused_movies.sh"
@@ -7,7 +7,7 @@
     command: remove_unused_movies
     track_code: "{{ track_code_remove_unused_movies }}"
 
-- name: Generate command
+- name: Generate command update_movie_data
   template:
     src: command.sh
     dest: "{{ cron_path }}/update_movie_data.sh"
@@ -16,7 +16,7 @@
     command: update_movie_data
     track_code: "{{ track_code_update_movie_data }}"
 
-- name: Generate command
+- name: Generate command update_imdb_ratings
   template:
     src: command.sh
     dest: "{{ cron_path }}/update_imdb_ratings.sh"
@@ -24,3 +24,12 @@
   vars:
     command: update_imdb_ratings
     track_code: "{{ track_code_update_imdb_ratings }}"
+
+- name: Generate command
+  template:
+    src: command.sh
+    dest: "{{ cron_path }}/update_vk_avatars.sh"
+    mode: u=rwx,g=,o=
+  vars:
+    command: update_vk_avatars
+    track_code: "{{ track_code_update_vk_avatars }}"
