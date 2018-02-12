@@ -1,0 +1,7 @@
+root_path: "/opt/{{ django_name }}"
+
+python: "{{ root_path }}/env/bin/python"
+manage: "{{ root_path }}/project/manage.py"
+
+is_prod: no
+is_dev: no

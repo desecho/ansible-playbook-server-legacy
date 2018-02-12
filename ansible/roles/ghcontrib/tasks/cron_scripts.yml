@@ -1,0 +1,8 @@
+- name: Generate command
+  template:
+    src: command.sh
+    dest: "{{ cron_path }}/update_avatars.sh"
+    mode: u=rwx,g=,o=
+  vars:
+    command: update_vk_avatars
+    track_code: "{{ track_code_update_avatars }}"

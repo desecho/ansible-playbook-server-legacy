@@ -1,0 +1,7 @@
+- name: Add update_avatars command to cron
+  cron:
+    name: update_avatars
+    special_time: daily
+    state: present
+    user: root
+    job: "{{ cron_path }}/update_avatars.sh"
