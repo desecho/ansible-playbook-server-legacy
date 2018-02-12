@@ -25,7 +25,7 @@
     command: update_imdb_ratings
     track_code: "{{ track_code_update_imdb_ratings }}"
 
-- name: Generate command
+- name: Generate command update_vk_avatars
   template:
     src: command.sh
     dest: "{{ cron_path }}/update_vk_avatars.sh"
