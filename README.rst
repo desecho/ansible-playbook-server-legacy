@@ -1,5 +1,5 @@
 ansible-playbook-server
-==================
+============================
 *Setup and provision a server and a development machine with ansible effortlessly.*
 
 It sets up the following:
@@ -161,7 +161,7 @@ sitedeploy
 ```
 
 Playbooks used
-------------
+---------------------
 * [ansible-nginx][ansible-nginx]
 * [ansible-role-fail2ban][ansible-role-fail2ban]
 * [ansible-django][ansible-django]
@@ -172,7 +172,7 @@ Playbooks used
 
 
 Still not automated
-------------
+-----------------------
 * Octopress installation
 * Grive installation
 * It does not set up connection to your production server

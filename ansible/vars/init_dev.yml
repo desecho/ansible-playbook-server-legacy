@@ -6,3 +6,6 @@ nodejs_npm_global_packages:
   - name: npm-check-updates
   - name: csscomb
   - name: jsbeautify
+  - name: eslint-config-google
+  - name: eslint-plugin-vue
+  - name: eslint
