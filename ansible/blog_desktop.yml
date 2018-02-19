@@ -1,0 +1,10 @@
+- name: Install blog.desecho.org
+  hosts: localhost
+
+  vars_files:
+      - vars/dev.yml
+      - vars/common.yml
+      - vars/desktop.yml
+
+  roles:
+    - blog

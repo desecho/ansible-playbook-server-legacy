@@ -11,7 +11,7 @@ export EDITOR=nano
 # Include datetime in history command output
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-{% if is_dev -%}
+{% if is_dev and not desktop -%}
 sudo su
 cd {{ home }}
 {%- endif %}

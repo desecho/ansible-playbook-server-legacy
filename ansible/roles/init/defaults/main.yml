@@ -7,6 +7,7 @@ required_packages:
   - python-pip  # For ansible-vault
   - libmysqlclient-dev  # For python3 mysqlclient
   - ntp
+  - curl
   - unattended-upgrades  # Make sure we get security updates automatically
   - htop  # For monitoring
   - iftop  # For monitoring

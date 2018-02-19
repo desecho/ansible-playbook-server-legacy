@@ -1,3 +1,4 @@
+# For root:
 - name: Generate configs
   template:
     src: "configs/{{ item }}"
@@ -12,8 +13,20 @@
 
 - name: Apply some changes to bash
   lineinfile:
-    path: ~/.bashrc
-    line: . ~/.bash_changes
+    path: /root/.bashrc
+    line: . /root/.bash_changes
+
+- name: Generate ssh config
+  template:
+    src: "configs/ssh_config"
+    dest: "/root/.ssh/config"
+    owner: root
+    mode: u=rw,g=,o=
+  with_items:
+    - ssh_config
+  when: is_dev
+
+# For regular user:
 
 # We need to copy the configs for ubuntu users as well for development
 - name: Generate configs for development
@@ -29,24 +42,23 @@
     - bash_changes
   when: is_dev
 
-
 - name: Generate ssh config
   template:
     src: "configs/ssh_config"
-    dest: "~/.ssh/config"
+    dest: "{{ home }}/.ssh/config"
     owner: "{{ user }}"
     mode: u=rw,g=,o=
   with_items:
     - ssh_config
   when: is_dev
 
+- name: Apply some changes to bash
+  lineinfile:
+    path: "{{ home }}/.bashrc"
+    line: ". {{ home }}/.bash_changes"
 
-- name: Generate ssh config
-  template:
-    src: "configs/ssh_config"
-    dest: "/root/.ssh/config"
-    owner: root
-    mode: u=rw,g=,o=
-  with_items:
-    - ssh_config
-  when: is_dev
+- name: Make sure octopress works
+  lineinfile:
+    path: "{{ home }}/.bashrc"
+    line: '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"'
+  when: desktop

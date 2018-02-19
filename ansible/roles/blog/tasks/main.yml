@@ -1,6 +1,7 @@
 - name: Generate scripts
   template:
     src: "{{ item }}"
+    owner: "{{ user }}"
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:

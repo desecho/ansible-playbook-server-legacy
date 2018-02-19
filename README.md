@@ -77,7 +77,12 @@ provisionall
 ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
 ?
 ```
-Copy aliases to your hosts `~/.bash_aliases` file (until the line).
+Copy aliases to your host's `~/.bash_aliases` file (until the line).
+
+To initialize Blog before Octopress installation:
+```
+git checkout --track origin/source
+```
 
 Install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org).
 
