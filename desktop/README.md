@@ -2,26 +2,19 @@ Setup and provision a development machine with ansible effortlessly.
 
 It is based on [Ubuntu](https://www.ubuntu.com/) 17.10. It uses Vagrant for packaging.
 
-## How to create an image from scratch
-
-Follow Part 1 of the installation guide.
-
+## Installation
 Run cmd as administrator.
 
 ```
 vagrant plugin install vagrant-disksize
 ```
 
-Use `config.vm.box = "marcoaltieri/ubuntu-desktop-16.04-64bit"` in `Vagrantfile`
-
-Add `config.disksize.size = '120GB'` to `Vagrantfile`
-
 Format your harddrive with Gparted in ext4 and lvm2.
 Install Ubuntu 17.10 Desktop.
 sudo apt-get install gcc make perl
 Install Guest Additions.
 Remove amazon from the dock.
-
+Find and install Hide Top Bar
 
 Run the following:
 ```
@@ -37,9 +30,18 @@ sudo apt purge gnome-mahjongg gnome-mines gnome-sudoku -y
 sudo apt purge transmission-gtk rhythmbox brltty cups cups-bsd cups-client cups-filters cheese eog evince gnome-calendar gnome-orca hplip nautilus-sendto nautilus-share remmina shotwell simple-scan speech-dispatcher totem vino foomatic-db-compressed-ppds doc-base -y
 # Make sure to remove unnecessary packages
 sudo apt autoremove
-sudo rm /var/crash/*
 sudo apt update
 sudo apt upgrade
 ```
 
-To package run `vagrant package --output ubuntu.box`
+## Packaging
+To package run
+```
+vagrant package --output ubuntu.box
+```
+
+## Provisioning
+
+```
+sudo ansible-playbook ansible/init_desktop0.yml
+```

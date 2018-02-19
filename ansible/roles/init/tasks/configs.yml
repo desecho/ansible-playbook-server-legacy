@@ -1,7 +1,7 @@
 - name: Generate configs
   template:
     src: "configs/{{ item }}"
-    dest: "~/.{{ item }}"
+    dest: "/root/.{{ item }}"
     owner: root
     mode: u=rw,g=,o=
   with_items:
