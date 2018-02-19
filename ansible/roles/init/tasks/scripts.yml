@@ -9,6 +9,8 @@
 - name: Generate scripts
   template:
     src: "{{ item }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
@@ -18,6 +20,8 @@
 - name: Generate scripts
   template:
     src: "{{ item }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
     dest: "{{ home }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
@@ -26,6 +30,8 @@
 
 - name: Generate scripts for development
   template:
+    owner: "{{ user }}"
+    group: "{{ user }}"
     src: "{{ item }}"
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
@@ -41,6 +47,8 @@
 
 - name: Generate scripts for production
   template:
+    owner: "{{ user }}"
+    group: "{{ user }}"
     src: "{{ item }}"
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
