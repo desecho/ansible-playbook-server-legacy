@@ -1,5 +1,6 @@
 - include: packages.yml
 - include: python36.yml
+  when: install_python_3
 - include: scripts.yml
 - include: configs.yml
 - include: pip.yml

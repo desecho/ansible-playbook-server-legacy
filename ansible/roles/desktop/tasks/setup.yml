@@ -1,0 +1,17 @@
+- name: Disable the screen blackout
+  command: gsettings set org.gnome.desktop.session idle-delay 0
+
+- name: Disable the screen lock
+  command: gsettings set org.gnome.desktop.screensaver lock-enabled false
+
+- name: Disable crash reports
+  replace:
+    path: /etc/default/apport
+    regexp: '(\s+)enabled=1(\s+.*)?$'
+    replace: '\1enabled=0\2'
+
+- name: Apply some changes to bash
+  lineinfile:
+    path: /etc/sudoers
+    line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
+    

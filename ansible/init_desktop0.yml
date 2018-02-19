@@ -1,0 +1,9 @@
+- name: Initialize ubuntu desktop machine. Step 0
+  hosts: localhost
+
+  vars_files:
+      - vars/common.yml
+      - vars/desktop.yml
+
+  roles:
+    - desktop

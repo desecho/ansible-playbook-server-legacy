@@ -1,0 +1,15 @@
+- { include: packages.yml, become: yes }
+
+- name: Generate ssh key
+  block:
+    - name: Check ssh key path
+      stat:
+        path: "{{ ssh_key_path }}"
+      register: ssh_key
+
+    - name: Generate ssh key
+      shell: "ssh-keygen -t rsa -C {{ email }} -N '' -f {{ ssh_key_path }}"
+      when: not ssh_key.stat.exists
+
+- include: configs.yml
+- { include: setup.yml, become: yes }

@@ -1,0 +1,5 @@
+install_python_3: no
+desktop: yes
+home: /home/vagrant
+original_home: "{{ home }}"
+user: vagrant

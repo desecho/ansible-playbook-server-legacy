@@ -1,0 +1,13 @@
+- name: Initialize ubuntu desktop machine for development
+  hosts: localhost
+
+  vars_files:
+      - vars/dev.yml
+      - vars/common.yml
+      - vars/init.yml
+      - vars/init_dev.yml
+      - vars/desktop.yml
+
+  roles:
+    - nodejs
+    - init

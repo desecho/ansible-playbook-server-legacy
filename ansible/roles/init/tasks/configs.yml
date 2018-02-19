@@ -19,8 +19,8 @@
 - name: Generate configs for development
   template:
     src: "configs/{{ item }}"
-    dest: "/home/ubuntu/.{{ item }}"
-    owner: ubuntu
+    dest: "{{ original_home }}/.{{ item }}"
+    owner: "{{ user }}"
     mode: u=rw,g=,o=
   with_items:
     - bash_aliases
@@ -34,7 +34,7 @@
   template:
     src: "configs/ssh_config"
     dest: "~/.ssh/config"
-    owner: ubuntu
+    owner: "{{ user }}"
     mode: u=rw,g=,o=
   with_items:
     - ssh_config

@@ -1,0 +1,11 @@
+- name: Ensure we have terminator config directory
+  file: path={{ home }}/.config/terminator state=directory
+
+- name: Generate terminator config
+  template:
+    src: "configs/{{ item }}"
+    dest: "{{ home }}/.config/terminator/config"
+    owner: "{{ user }}"
+    mode: u=rw,g=,o=
+  with_items:
+    - terminator.config

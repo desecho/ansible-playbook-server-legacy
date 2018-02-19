@@ -2,8 +2,8 @@
   file:
     path: "{{ scripts_path }}"
     state: directory
-    owner: root
-    group: root
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: 0755
 
 - name: Generate scripts
