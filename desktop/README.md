@@ -11,12 +11,13 @@ vagrant plugin install vagrant-disksize
 
 Format your harddrive with Gparted in ext4 and lvm2.
 Install Ubuntu 17.10 Desktop.
+```
 sudo apt-get install gcc make perl
+```
 Install Guest Additions.
 Remove amazon from the dock.
 Find and install Hide Top Bar
 
-Run the following:
 ```
 # Remove libreoffice
 sudo apt purge libreoffice-avmedia-backend-gstreamer libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw libreoffice-gnome libreoffice-gtk libreoffice-help-en-us libreoffice-impress libreoffice-math libreoffice-ogltrans libreoffice-pdfimport libreoffice-style-breeze libreoffice-style-galaxy libreoffice-writer -y
