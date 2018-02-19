@@ -9,7 +9,7 @@ It sets up the following:
 * [Django][Django]
 
 Along with:
-* SSL serificates provided by [Let’s Encrypt][Let’s Encrypt]
+* SSL cerificates provided by [Let’s Encrypt][Let’s Encrypt]
 * [Fail2ban][Fail2ban]
 
 It's meant to work in production and development environments (in the VM).
@@ -19,7 +19,7 @@ It uses [ansible-vault][ansible-vault] to manage secrets.
 It uses [Grive][Grive] and [Google Drive][Google Drive] for backup storage.
 It installs htop and iftop to monitor through CLI.
 
-**Warning**: It suits my particular needs but might not be suitable for others. It is not perfect and it is not meant to be. It's also currently set up in a way that is not the most secure thing one might come up with. See "Drawbacks" below for details.
+**Warning**: It suits my particular needs but might not be suitable for others. It is not perfect and it is not meant to be. It's also currently set up in a way that is not the most secure thing one might come up with. See [Drawbacks][#Drawbacks] for details.
 
 It is currently used to provision the following projects:
 * [Movies][Movies]
@@ -38,7 +38,7 @@ Details
 ------------
 It has an initial provisioning which is run before everything else which is responsible for the base of the server. Then it has separate provisioning for each project.
 
-It installs [ipdb][ipdb], [yarn][yarn], [git][git], [pip][pip], [tox][tox], [isort][isort], [npm][npm] and other packages globally. [Ntp][Ntp] is enabled. Locale is set to en_US.UTF-8.
+It installs [ipdb][ipdb], [yarn][yarn], [git][git], [pip][pip], [tox][tox], [isort][isort], [npm][npm] and other packages globally. [Ntp][Ntp] is enabled. Locale is set to `en_US.UTF-8`.
 The backups are being run every day. The logs are in `/root/logs`.
 Security packages are being updated constantly automatically and if restart is required it is done right after the backup script is finished.
 
@@ -59,16 +59,16 @@ vagrant ssh
 sudo su
 ssh-keygen -t rsa -C desecho@gmail.com -N ''
 cat ~/.ssh/id_rsa.pub
-# Add a key on the [github key settings page](https://github.com/settings/keys)
 ```
 
-You need to make changes to [common.yml][common.yml] before you start.
+Add a key on the [github key settings page](https://github.com/settings/keys)
 
 ```bash
 cd /vagrant/ansible-playbook-server
 ./init/provision.sh
 ./bootstrap.sh
 ./init/init_password.sh password  # password for ansible-vault
+./init/clone_dev.sh
 ./provision.sh init dev
 exit
 exit
@@ -100,6 +100,7 @@ Add a key on the [github key settings page](https://github.com/settings/keys)
 git clone git@github.com:desecho/ansible-playbook-server.git
 cd /root/ansible-playbook-server
 apt-get update
+./init/clone_prod.sh
 ./init/provision.sh
 ./bootstrap.sh
 ./init/init_password.sh password  # Password for ansible-vault
@@ -114,6 +115,10 @@ provisionall
 ```
 
 Install [Grive][Grive]. The process is described [here](https://blog.desecho.org/?#toc_516).
+
+Desktop
+-------------
+See [Readme for Ubuntu Desktop](https://github.com/desecho/ansible-playbook-server/blob/master/desktop/README.md)
 
 Usage
 ------------
@@ -191,10 +196,8 @@ Drawbacks
 * Deployment happens manualy. It is easy to do but you still have to connect directly to the server and run commands
 * Questionable backup solution
 * There are a few issues which have not been resolved for the moment
-    * `provisionall` command does not stop on error so you need to visually make sure there are no red lines on the screen
     * Ansible event statuses shows change in places it shouldn't do so sometimes
     * It restarts nginx multiple times while provisioning
-    * You have to run initial `provision init` command 2 times to make it work.
     * It is not optimized.
     * It breaks the server for some time while provisioning.
 
@@ -232,3 +235,5 @@ Drawbacks
 [Githubcontrib]: https://github.com/desecho/ghcontrib
 [Ansible]: https://www.ansible.com/
 [Ubuntu]: https://www.ubuntu.com/
+
+

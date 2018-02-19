@@ -30,17 +30,17 @@ sudo apt purge gnome-mahjongg gnome-mines gnome-sudoku -y
 sudo apt purge transmission-gtk rhythmbox brltty cups cups-bsd cups-client cups-filters cheese eog evince gnome-calendar gnome-orca hplip nautilus-sendto nautilus-share remmina shotwell simple-scan speech-dispatcher totem vino foomatic-db-compressed-ppds doc-base -y
 # Make sure to remove unnecessary packages
 sudo apt autoremove
-sudo apt update
-sudo apt upgrade
+cd ~
+rm -rf Desktop Documents examples.desktop Music Pictures Public Templates Videos
 ```
 
 ## Packaging
-To package run
+
 ```
 vagrant package --output ubuntu.box
 ```
 
-## Provisioning
+## Initial Provisioning
 
 ```
 sudo ansible-playbook ansible/init_desktop0.yml
