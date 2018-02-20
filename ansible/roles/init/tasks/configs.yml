@@ -45,7 +45,7 @@
 - name: Generate ssh config
   template:
     src: "configs/ssh_config"
-    dest: "{{ home }}/.ssh/config"
+    dest: "{{ original_home }}/.ssh/config"
     owner: "{{ user }}"
     mode: u=rw,g=,o=
   with_items:
@@ -54,8 +54,8 @@
 
 - name: Apply some changes to bash
   lineinfile:
-    path: "{{ home }}/.bashrc"
-    line: ". {{ home }}/.bash_changes"
+    path: "{{ original_home }}/.bashrc"
+    line: ". {{ original_home }}/.bash_changes"
 
 - name: Make sure octopress works
   lineinfile:

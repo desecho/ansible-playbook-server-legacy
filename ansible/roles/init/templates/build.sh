@@ -6,4 +6,4 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 cd /opt/$1/project
-yarn build
+yarn build --watch

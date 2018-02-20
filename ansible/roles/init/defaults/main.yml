@@ -25,3 +25,4 @@ timezone: US/Eastern
 is_prod: no
 is_dev: no
 install_python_3: yes
+desktop: no
