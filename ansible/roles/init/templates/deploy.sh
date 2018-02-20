@@ -11,7 +11,8 @@ cd {{ home }}/$1
 git pull
 {%- endif %}
 
-./yarn_install.sh
+yarn install
+yarn build
 source /opt/$1/env/bin/activate
 pip install -r requirements.txt --exists-action s
 cd /opt/$1/project/src

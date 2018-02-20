@@ -9,4 +9,3 @@ nodejs_npm_global_packages:
   - name: eslint-config-google
   - name: eslint-plugin-vue
   - name: eslint
-  - name: eslint-plugin-jquery

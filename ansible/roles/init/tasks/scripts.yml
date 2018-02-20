@@ -36,6 +36,7 @@
     dest: "{{ scripts_path }}/{{ item }}"
     mode: u=rwx,g=,o=
   with_items:
+    - build.sh
     - develop.sh
     - develop2.sh
     - tox.sh
