@@ -1,5 +1,6 @@
 - name: Install Django development environment. PyFavorite Project.
   hosts: localhost
+  become: yes
 
   vars_files:
       - vars/dev.yml

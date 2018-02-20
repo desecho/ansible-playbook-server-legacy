@@ -1,5 +1,6 @@
 - name: Initialize ubuntu desktop machine for development
   hosts: localhost
+  become: yes
 
   vars_files:
       - vars/dev.yml

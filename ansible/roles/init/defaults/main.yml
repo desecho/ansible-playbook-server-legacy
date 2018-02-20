@@ -13,6 +13,8 @@ required_packages:
   - iftop  # For monitoring
   - software-properties-common  # To install python 3.6
   - python-software-properties  # To install python 3.6
+  - libjpeg-dev # pillow
+  - gettext
 
 required_packages_dev:
   - python3-pip  # For pypi

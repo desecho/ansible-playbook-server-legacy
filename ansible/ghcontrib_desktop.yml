@@ -5,6 +5,7 @@
   vars_files:
       - vars/dev.yml
       - vars/common.yml
+      - vars/desktop.yml
       - vars/ghcontrib_dev_secrets.yml
       - vars/ghcontrib.yml
       - vars/ghcontrib_dev.yml

@@ -5,6 +5,7 @@
   vars_files:
       - vars/dev.yml
       - vars/common.yml
+      - vars/desktop.yml
       - vars/movies_dev_secrets.yml
       - vars/movies.yml
       - vars/movies_dev.yml

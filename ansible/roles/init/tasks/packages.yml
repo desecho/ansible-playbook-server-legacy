@@ -17,3 +17,7 @@
 - name: Ensure required packages for development are present
   apt: "name={{ item }} state=present"
   with_items: "{{ required_packages_dev }}"
+
+- name: Ensure package needed for Django (pillow) is present
+  apt: name=libpng12-dev state=present
+  when: not desktop
