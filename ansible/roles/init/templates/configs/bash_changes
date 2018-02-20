@@ -23,4 +23,6 @@ export PATH="/usr/local/lib/npm/bin:$PATH"
 
 {% if desktop -%}
 export DESKTOP=1
+{% else %}
+export DESKTOP=0
 {%- endif %}
