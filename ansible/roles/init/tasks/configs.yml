@@ -56,6 +56,7 @@
   lineinfile:
     path: "{{ original_home }}/.bashrc"
     line: ". {{ original_home }}/.bash_changes"
+  when: is_dev
 
 - name: Make sure octopress works
   lineinfile:
