@@ -14,4 +14,3 @@
   lineinfile:
     path: /etc/sudoers
     line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
-    

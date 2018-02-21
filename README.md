@@ -54,14 +54,30 @@ mkdir vm
 git clone git@github.com:desecho/ansible-playbook-server.git
 cp ansible-playbook-server/Vagrantfile .
 vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-disksize
+vagrant up
+```
+
+Install ubuntu by using a CD-ROM.
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@127.0.0.1 -p 2222
+ssh-add ~/.ssh/id_rsa
+cp /Users/desecho/.ssh/id_rsa /Users/desecho/.vagrant.d/insecure_private_key
+vagrant ssh
+sudo su
+echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+init 0
 vagrant up
 vagrant ssh
+ssh-keygen -t rsa -C desecho@gmail.com -N ''
+cat ~/.ssh/id_rsa.pub
 sudo su
 ssh-keygen -t rsa -C desecho@gmail.com -N ''
 cat ~/.ssh/id_rsa.pub
 ```
 
-Add a key on the [github key settings page](https://github.com/settings/keys)
+Add keys on the [github key settings page](https://github.com/settings/keys)
 
 ```bash
 cd /vagrant/ansible-playbook-server
