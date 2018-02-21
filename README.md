@@ -91,6 +91,8 @@ exit
 vagrant ssh
 provisionall
 ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
+exit
+ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
 ?
 ```
 Copy aliases to your host's `~/.bash_aliases` file (until the line).
