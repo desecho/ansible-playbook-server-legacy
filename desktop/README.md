@@ -19,7 +19,7 @@ Install Ubuntu 17.10 Desktop.
 sudo apt-get install gcc make perl gnome-tweak-tool
 ```
 Install Guest Additions.
-Remove amazon from the dock.
+Remove amazon and help from the dock.
 Find and install Hide Top Bar
 Run Tweaks -> Disable animations.
 Make sure to switch to X.org when logging in.
@@ -57,6 +57,8 @@ pref.vmplayer.fullscreen.nobar = "TRUE"
 pref.vmplayer.fullscreen.nobar = 1
 ```
 Settings -> Devices -> Display. Enable 200% scaling.
+Remove amazon and help from the dock.
+Find and install Hide Top Bar
 
 To enable shared folders:
 Manage -> Reinstall VMware tools.
@@ -95,3 +97,5 @@ exit
 provisionall
 ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
 ```
+
+Provisioning commands like  `provision movies` should be run under root.
