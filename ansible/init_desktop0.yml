@@ -3,6 +3,7 @@
 
   vars_files:
       - vars/common.yml
+      - vars/dev.yml
       - vars/desktop.yml
 
   roles:
