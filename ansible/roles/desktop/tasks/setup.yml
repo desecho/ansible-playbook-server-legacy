@@ -9,8 +9,3 @@
     path: /etc/default/apport
     regexp: '(\s+)enabled=1(\s+.*)?$'
     replace: '\1enabled=0\2'
-
-- name: Apply some changes to bash
-  lineinfile:
-    path: /etc/sudoers
-    line: "{{ user }} ALL=(ALL) NOPASSWD: ALL"
