@@ -12,11 +12,13 @@ vagrant plugin install vagrant-disksize
 Format your harddrive with Gparted in ext4 and lvm2.
 Install Ubuntu 17.10 Desktop.
 ```
-sudo apt-get install gcc make perl
+sudo apt-get install gcc make perl gnome-tweak-tool
 ```
 Install Guest Additions.
 Remove amazon from the dock.
 Find and install Hide Top Bar
+Run Tweaks -> Disable animations.
+Make sure to switch to X.org when logging in.
 
 ```
 # Remove libreoffice
