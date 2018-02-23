@@ -57,9 +57,3 @@
     path: "{{ original_home }}/.bashrc"
     line: ". {{ original_home }}/.bash_changes"
   when: is_dev
-
-- name: Make sure octopress works
-  lineinfile:
-    path: "{{ home }}/.bashrc"
-    line: '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"'
-  when: desktop

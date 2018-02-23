@@ -99,15 +99,6 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production 
 ```
 
 
-Initialize Blog
--------------------
-To initialize Blog before Octopress installation:
-```
-git checkout --track origin/source
-```
-
-Install [Octopress][Octopress]. The process is described [here](https://blog.desecho.org).
-
 Production
 --------------
 
@@ -205,7 +196,6 @@ Playbooks used
 
 Still not automated
 -----------------------
-* Octopress installation
 * Grive installation
 * It does not set up connection to your production server
 * It does not create the ssh key
@@ -240,7 +230,6 @@ Drawbacks
 [ansible-role-mysql]: https://github.com/geerlingguy/ansible-role-mysql
 [Fail2ban]: https://www.fail2ban.org/
 [MySQL]: https://www.mysql.com/
-[Octopress]: http://octopress.org
 [Grive]: https://github.com/Grive/grive
 [Google Drive]: https://drive.google.com
 [ansible-role-nodejs]: https://github.com/geerlingguy/ansible-role-nodejs
@@ -257,5 +246,3 @@ Drawbacks
 [Githubcontrib]: https://github.com/desecho/ghcontrib
 [Ansible]: https://www.ansible.com/
 [Ubuntu]: https://www.ubuntu.com/
-
-
