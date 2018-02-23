@@ -1,3 +1,8 @@
+- name: Ensure hugo is installed
+  apt: name=hugo state=present
+  when: is_dev
+  become: yes
+
 - name: Generate scripts
   template:
     src: "{{ item }}"

@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd {{ home }}/blog
-rake new_post["$1"]
+hugo new posts/$1.md
