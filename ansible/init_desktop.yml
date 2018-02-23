@@ -10,5 +10,6 @@
       - vars/desktop.yml
 
   roles:
-    - nodejs
-    - init
+    # - nodejs
+    - swapfile
+    # - init

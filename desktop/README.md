@@ -79,9 +79,7 @@ Add key on the [github key settings page](https://github.com/settings/keys)
 
 ### Provisioning
 ```bash
-sudo ./desktop/remove_stuff.sh
-sudo apt install git
-gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
+sudo ./desktop/init.sh
 git clone git@github.com:desecho/ansible-playbook-server.git
 cd ansible-playbook-server
 ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@localhost
