@@ -59,6 +59,9 @@ pref.vmplayer.fullscreen.nobar = 1
 Settings -> Devices -> Display. Enable 200% scaling.
 Remove amazon and help from the dock.
 Find and install Hide Top Bar
+Region & Language -> Input Sources -> Add Russian
+Keyboard -> Typing -> Switch to next input source -> Ctrl + Space
+
 
 To enable shared folders:
 Manage -> Reinstall VMware tools.

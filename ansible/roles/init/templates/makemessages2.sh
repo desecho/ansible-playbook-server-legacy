@@ -10,7 +10,13 @@ cd /opt/$1/project
 ./manage.py makemessages
 
 if [ $1 = "movies" ]; then
-   ./manage.py makemessages -d djangojs --ignore=moviesapp/static/*
-else
-  ./manage.py makemessages -d djangojs
+   ./manage.py makemessages -d djangojs --ignore=moviesapp/static/* --ignore=node_modules/*
+   exit 0
 fi
+
+if [ $1 = "ghcontrib" ]; then
+   ./manage.py makemessages -d djangojs --ignore=ghcontrib/static/* --ignore=node_modules/*
+   exit 0
+fi
+
+./manage.py makemessages -d djangojs
