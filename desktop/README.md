@@ -56,7 +56,6 @@ Make sure to have these settings:
 pref.vmplayer.fullscreen.nobar = "TRUE"
 pref.vmplayer.fullscreen.nobar = 1
 ```
-Settings -> Devices -> Display. Enable 200% scaling.
 Remove amazon and help from the dock.
 Find and install Hide Top Bar
 Region & Language -> Input Sources -> Add Russian
@@ -94,6 +93,7 @@ echo [password] > ~/.vault_pass.txt
 ./provision.sh init desktop
 exit
 ```
+Make sure `/etc/fstab` has only one swap record
 
 ```bash
 provisionall
@@ -101,3 +101,5 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production 
 ```
 
 Provisioning commands like  `provision movies` should be run under root.
+
+Each time you load the machine you will need to disable and enable back the fullscreen mode and then run Displays -> Enable 200% scaling.
