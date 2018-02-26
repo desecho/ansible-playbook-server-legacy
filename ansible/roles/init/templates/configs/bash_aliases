@@ -55,6 +55,7 @@ alias log="git log"
 alias write="git add .; git commit"  # Warning! This command is actually ovewritten on dev.
 alias revert="git checkout --"
 alias amend="git commit --amend"
+alias amendpush='git add . && git commit --amend --no-edit && git push -f'
 alias new="git checkout -b"
 
 # ===================== CUT HERE ====================

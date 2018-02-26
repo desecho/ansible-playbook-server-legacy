@@ -35,3 +35,15 @@
     state: present
     user: root
     job: "{{ cron_path }}/backup.sh"
+
+
+# Run provisioning at 3 am every first day of the month
+- name: Ensure that we have a cron job for monthly provisioning
+  cron:
+    name: provisionall
+    day: 1
+    minute: 0
+    hour: 3
+    state: present
+    user: root
+    job: "cd {{ home }}/ansible-playbook-server && ./bootstrap.sh && ./provision_all.sh prod"
