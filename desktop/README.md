@@ -19,7 +19,7 @@ Install Ubuntu 17.10 Desktop.
 sudo apt-get install gcc make perl gnome-tweak-tool
 ```
 Install Guest Additions.
-Remove amazon and help from the dock.
+Remove Amazon, Help, Ubuntu software and Settings from the dock.
 Find and install Hide Top Bar
 Run Tweaks -> Disable animations.
 Make sure to switch to X.org when logging in.
