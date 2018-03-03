@@ -3,5 +3,6 @@ install_chromium: yes
 install_sublime: yes
 pycharm_version: 2017.3.3
 ssh_key_path: "{{ home }}/.ssh/id_rsa"
+ssh_key_path_root: "/root/.ssh/id_rsa"
 required_packages:
   - terminator

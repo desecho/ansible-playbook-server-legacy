@@ -11,5 +11,17 @@
       shell: "ssh-keygen -t rsa -C {{ email }} -N '' -f {{ ssh_key_path }}"
       when: not ssh_key.stat.exists
 
+- name: Generate ssh key for root
+  block:
+    - name: Check ssh key path
+      stat:
+        path: "{{ ssh_key_path_root }}"
+      register: ssh_key
+
+    - name: Generate ssh key
+      shell: "ssh-keygen -t rsa -C {{ email }} -N '' -f {{ ssh_key_path_root }}"
+      when: not ssh_key.stat.exists
+  become: yes
+
 - include: configs.yml
 - { include: setup.yml, become: yes }
