@@ -57,7 +57,11 @@ alias revert="git checkout --"
 alias amend="git commit --amend"
 alias amendpush='git add . && git commit --amend --no-edit && git push -f'
 alias new="git checkout -b"
+alias currentbranch="git rev-parse --abbrev-ref HEAD"
 
+function dirty {
+  [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
+}
 # ===================== CUT HERE ====================
 
 {% if is_prod -%}
