@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
         vb.memory = 4096
     end
 
-    config.vm.box = "ubuntu/xenial64"
+    config.vm.box = "olbat/tiny-core-micro"
     config.disksize.size = '120GB'
 
     config.vm.define "ubuntu" do |config|
