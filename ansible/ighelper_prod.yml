@@ -1,0 +1,19 @@
+- name: Install a fully functional uWSGI/nginx server for Django deployment on development. InstagramHelper Project.
+  hosts: localhost
+
+  vars_files:
+      - vars/prod.yml
+      - vars/common.yml
+      - vars/ighelper_prod_secrets.yml
+      - vars/ighelper.yml
+      - vars/ighelper_prod.yml
+      - vars/site.yml
+      - vars/django.yml
+
+  roles:
+    - nodejs
+    - role: mysql
+      become: yes
+    - acme-nginx
+    - django
+    - ghcontrib

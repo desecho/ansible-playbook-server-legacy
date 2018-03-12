@@ -26,7 +26,7 @@ It is currently used to provision the following projects:
 * [IT Blog][IT Blog]
 * [desecho.org][desecho.org]
 * [GitHub Contrib][Githubcontrib]
-* pyfavorite
+* [Instagram Helper][Instagramhelper]
 
 Requirements
 ------------
@@ -244,5 +244,6 @@ Drawbacks
 [VirtualBox]: https://www.virtualbox.org/
 [Vagrant]: https://www.vagrantup.com/
 [Githubcontrib]: https://github.com/desecho/ghcontrib
+[Instagramhelper]: https://github.com/desecho/ighelper
 [Ansible]: https://www.ansible.com/
 [Ubuntu]: https://www.ubuntu.com/
