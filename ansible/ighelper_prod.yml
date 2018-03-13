@@ -16,4 +16,3 @@
       become: yes
     - acme-nginx
     - django
-    - ghcontrib
