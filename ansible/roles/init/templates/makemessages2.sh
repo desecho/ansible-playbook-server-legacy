@@ -19,4 +19,9 @@ if [ $1 = "ghcontrib" ]; then
    exit 0
 fi
 
+if [ $1 = "ighelper" ]; then
+   ./manage.py makemessages -d djangojs --ignore=ighelper/static/* --ignore=node_modules/*
+   exit 0
+fi
+
 ./manage.py makemessages -d djangojs

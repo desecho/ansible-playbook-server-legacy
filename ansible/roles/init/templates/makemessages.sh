@@ -14,9 +14,4 @@ if [ $1 = "movies" ]; then
    exit 0
 fi
 
-if [ $1 = "ghcontrib" ]; then
-   ./manage.py makemessages -d djangojs --ignore=ghcontrib/static/* --ignore=node_modules/*
-   exit 0
-fi
-
 ./manage.py makemessages -d djangojs

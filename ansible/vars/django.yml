@@ -4,4 +4,6 @@ django_ispython3: yes
 django_dbpass: "{{ mysql_root_password }}"
 django_project_symlink_dest: "{{ home }}/{{ django_name }}"
 mysql_databases:
-  - { name: "{{ django_name }}" }
+  - name: "{{ django_name }}"
+  - collation: utf8mb4_general_ci
+  - encoding: utf8mb4
