@@ -147,6 +147,13 @@ provision ghcontrib
 ```bash
 provisionall
 ```
+
+How to add a new Django project
+----------------------------------
+* https://requires.io/settings/repositories/
+* Change makemessages2 file
+* Modify init/clone_dev.sh and init/clone_prod.sh
+
 Commands
 ------------
 Here is a short list of available aliases. For the full list, run `?`.
