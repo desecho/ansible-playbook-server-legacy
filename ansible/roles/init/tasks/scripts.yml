@@ -27,6 +27,15 @@
   with_items:
     - workon
     - workon2
+
+- name: Generate scripts for dev & prod
+  template:
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    src: "{{ item }}"
+    dest: "{{ scripts_path }}/{{ item }}"
+    mode: u=rwx,g=,o=
+  with_items:
     - loaddump.sh
 
 - name: Generate scripts for development
