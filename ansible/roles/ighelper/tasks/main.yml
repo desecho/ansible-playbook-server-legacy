@@ -1,0 +1,8 @@
+- name: Add repository for python 3.6 installation
+  shell: add-apt-repository ppa:kirillshkrogalev/ffmpeg-next
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Ensure ffmpeg is installed
+  apt: name=ffmpeg state=present
