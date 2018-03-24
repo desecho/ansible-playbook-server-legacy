@@ -88,7 +88,6 @@ alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.
 alias deploy="{{ scripts_path }}/deploy.sh"
 alias deploy2="{{ scripts_path }}/deploy2.sh"
 alias manage="./manage.py"
-alias loaddump="{{ scripts_path }}/loaddump.sh"
 {% if is_dev -%}
 alias build="{{ scripts_path }}/build.sh"
 alias develop="{{ scripts_path }}/develop.sh"
@@ -103,6 +102,13 @@ alias restart="{{ scripts_path }}/restart.sh"
 alias debug="{{ scripts_path }}/debug.sh"
 {%- endif %}
 
+# ----------- MySQL -----------------
+
+alias loaddump="{{ scripts_path }}/loaddump.sh"
+{% if is_prod -%}
+alias restart="{{ scripts_path }}/restart.sh"
+alias backupmysqlnow="export YESTERDAY=1 && {{ scripts_path }}/mysql_backup.sh"
+{%- endif %}
 # ============= Services ======================
 
 # ----------- Site -----------------

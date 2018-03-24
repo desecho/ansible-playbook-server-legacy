@@ -11,7 +11,11 @@ DIR="/var/backups"
 MYSQL_DUMP="$(which mysqldump)"
 MYSQL="$(which mysql)"
 GZIP="$(which gzip)"
-NOW=$(date +"%d-%m-%Y")
+if [ -n "$YESTERDAY" ]; then
+    NOW=$(date --date="yesterday" +"%d-%m-%Y")
+else
+    NOW=$(date +"%d-%m-%Y")
+fi
 
 # DBS="$($MYSQL -u $MYSQL_USER -h $MYSQL_HOST -p$MYSQL_PASSWORD -Bse 'show databases')"
 DBS="$($MYSQL -u $MYSQL_USER -h $MYSQL_HOST -Bse 'show databases')"
