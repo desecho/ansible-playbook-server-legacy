@@ -1,8 +1,9 @@
-- name: Add repository for python 3.6 installation
-  shell: add-apt-repository ppa:jonathonf/ffmpeg-3
+# It was working fine but it broke, so we comment it out for now.
+# - name: Add repository for python 3.6 installation
+#   shell: add-apt-repository ppa:jonathonf/ffmpeg-3
 
-- name: apt-get update
-  apt: update_cache=yes
+# - name: apt-get update
+#   apt: update_cache=yes
 
 - name: Ensure ffmpeg is installed
   apt: name=ffmpeg state=present
