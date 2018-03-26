@@ -36,9 +36,9 @@ django_env_settings_extra: |
 
   # Email
   EMAIL_USE_TLS = True
-  EMAIL_HOST = 'smtp.gmail.com'
-  EMAIL_HOST_USER = '{{ email }}'
-  EMAIL_HOST_PASSWORD = '{{ gmail_smtp_password }}'
-  EMAIL_PORT = 587
+  EMAIL_HOST = 'smtp.yandex.ru'
+  EMAIL_HOST_USER = 'movies@desecho.org'
+  EMAIL_HOST_PASSWORD = '{{ smtp_password }}'
+  EMAIL_PORT = 465
 
 yarn: yes
