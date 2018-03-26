@@ -1,4 +1,5 @@
 mysql_user_password: "{{ mysql_root_password }}"
+email: movies@desecho.org
 django_fixtures_to_load:
   - moviesapp/fixtures/lists.json
   - moviesapp/fixtures/actions.json
@@ -37,7 +38,7 @@ django_env_settings_extra: |
   # Email
   EMAIL_USE_TLS = True
   EMAIL_HOST = 'smtp.yandex.ru'
-  EMAIL_HOST_USER = 'movies@desecho.org'
+  EMAIL_HOST_USER = '{{ email }}'
   EMAIL_HOST_PASSWORD = '{{ smtp_password }}'
   EMAIL_PORT = 465
 
