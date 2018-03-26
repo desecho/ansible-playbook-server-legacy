@@ -9,7 +9,11 @@ django_env_settings_extra: |
   ADMIN_EMAIL = '{{ email }}'
 
   RAVEN_DSN = '{{ raven_dsn }}'
-  DESECHO8653_PASSWORD = '{{ desecho8653_password }}'
+  ADMIN_USERNAME = '{{ admin_username }}'
+  ADMIN_INSTAGRAM_ID = {{ admin_instagram_id }}
+  ADMIN_PASSWORD = '{{ admin_password }}'
+  FAKE_USERNAME = '{{ fake_username }}'
+  FAKE_PASSWORD = '{{ fake_pasword }}'
 
   INTERNAL_IPS = []
   # INTERNAL_IPS = ['10.0.0.1']
