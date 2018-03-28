@@ -12,6 +12,7 @@ git pull
 {%- endif %}
 
 yarn build
+source /opt/$1/env/bin/activate
 cd /opt/$1/project/src
 ./manage.py migrate
 ./manage.py collectstatic --noinput
