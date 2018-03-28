@@ -87,6 +87,8 @@ alias provisionall="clear; cd {{ home }}/ansible-playbook-server && ./bootstrap.
 # ----------- Django -----------------
 alias deploy="{{ scripts_path }}/deploy.sh"
 alias deploy2="{{ scripts_path }}/deploy2.sh"
+alias deployfast="{{ scripts_path }}/deployfast.sh"
+alias deployfast2="{{ scripts_path }}/deployfast2.sh"
 alias manage="./manage.py"
 {% if is_dev -%}
 alias build="{{ scripts_path }}/build.sh"
@@ -100,6 +102,7 @@ alias makemessages2="{{ scripts_path }}/makemessages2.sh"
 {% if is_prod -%}
 alias restart="{{ scripts_path }}/restart.sh"
 alias debug="{{ scripts_path }}/debug.sh"
+alias logs="{{ scripts_path }}/logs.sh"
 {%- endif %}
 
 # ----------- MySQL -----------------

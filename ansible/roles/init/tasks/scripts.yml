@@ -16,6 +16,8 @@
   with_items:
     - deploy.sh
     - deploy2.sh
+    - deployfast.sh
+    - deployfast2.sh
 
 - name: Generate scripts
   template:
@@ -65,4 +67,5 @@
   with_items:
     - restart.sh
     - debug.sh
+    - logs.sh
   when: is_prod
