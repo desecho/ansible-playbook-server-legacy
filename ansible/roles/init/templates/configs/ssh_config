@@ -3,3 +3,9 @@ Host prod
     User root
     ForwardAgent yes
     StrictHostKeyChecking no
+
+Host proxy
+    HostName proxy.{{ prod_hostname }}
+    User root
+    ForwardAgent yes
+    StrictHostKeyChecking no

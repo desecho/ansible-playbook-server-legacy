@@ -98,6 +98,7 @@ Make sure `/etc/fstab` has only one swap record
 ```bash
 provisionall
 ssh-copy-id -i ~/.ssh/id_rsa.pub prod  # Set up connection with your production server
+ssh-copy-id -i ~/.ssh/id_rsa.pub proxy  # Set up connection with your proxy server
 ```
 
 Provisioning commands like  `provision movies` should be run under root.
