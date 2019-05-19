@@ -7,4 +7,3 @@ mysql_databases:
   - name: "{{ django_name }}"
     collation: utf8mb4_general_ci
     encoding: utf8mb4
-django_python3exec: python3.7
