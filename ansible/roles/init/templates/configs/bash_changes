@@ -9,13 +9,13 @@ alias free='free -h'
 # Fix cd for ubuntu machine for root
 cd () {
     if [ $# = 0 ]; then
-        builtin cd /vagrant
+        builtin cd /desecho
     else
         builtin cd "$@"
     fi
 }
 
-cd /vagrant
+cd /desecho
 {%- endif %}
 
 # Fix npm path

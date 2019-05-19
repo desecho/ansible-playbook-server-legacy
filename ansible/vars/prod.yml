@@ -1,3 +1,4 @@
 home: /root
 is_prod: yes
 user: root
+ubuntu_16: yes

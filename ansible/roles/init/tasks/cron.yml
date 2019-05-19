@@ -16,7 +16,6 @@
     mode: u=rwx,g=,o=
   with_items:
     - mysql_backup.sh
-    - google_drive_backup.sh
     - reboot_if_needed.sh
     - backup.sh
 

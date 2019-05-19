@@ -11,5 +11,4 @@
 
   roles:
     - nodejs
-    - swapfile
     - init

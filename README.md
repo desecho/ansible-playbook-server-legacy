@@ -26,7 +26,7 @@ It is currently used to provision the following projects:
 * [IT Blog][IT Blog]
 * [desecho.org][desecho.org]
 * [GitHub Contrib][Githubcontrib]
-* [Instagram Helper][Instagramhelper]
+* [Instagram Helper][Instagramhelper] (It is temporarily not available to provision)
 
 Requirements
 ------------

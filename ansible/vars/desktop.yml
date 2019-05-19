@@ -1,3 +1,2 @@
-install_python_3: no
 desktop: yes
-home: /home/vagrant
+home: /home/desecho

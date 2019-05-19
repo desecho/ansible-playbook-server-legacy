@@ -1,4 +1,3 @@
 is_dev: yes
-home: /vagrant
-original_home: /home/vagrant
-user: vagrant
+home: /home/desecho
+user: desecho

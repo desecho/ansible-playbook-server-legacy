@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -e
 
 ### MySQL Info ###
 MYSQL_USER="root"
@@ -29,5 +29,5 @@ for db in $DBS
 do
  FILE=$DIR/$NOW/$db.$NOW.sql.gz
  $MYSQL_DUMP -u $MYSQL_USER -h $MYSQL_HOST $db | $GZIP -9 > $FILE
- # $MYSQL_DUMP -u $MYSQL_USER -h $MYSQL_HOST -p$MYSQL_PASSWORD $db | $GZIP -9 > $FILE
 done
+dropbox_uploader.sh upload $DIR/$NOW Backups

@@ -1,0 +1,17 @@
+- name: Add repository for python 3.7 installation
+  shell: add-apt-repository ppa:jonathonf/python-3.7 -y
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Ensure python 3.7 is installed
+  apt: "name={{ item }} state=present"
+  with_items:
+    - python3.7
+    - python3.7-dev
+
+- name: Ensure python 3.6 is used by default. Step 1
+  shell: update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+
+- name: Ensure python 3.6 is used by default. Step 2
+  shell: update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1

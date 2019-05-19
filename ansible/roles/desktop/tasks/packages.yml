@@ -14,6 +14,11 @@
   apt: "name={{ item }} state=present"
   with_items: "{{ required_packages }}"
 
+# Required for ubuntu 16.04
+- name: Ensure python-software-properties is installed
+  apt: "name=python-software-properties state=present"
+  when: ubuntu_16
+
 - name: Install Chromium
   apt: "name=chromium-browser state=present"
   when: install_chromium

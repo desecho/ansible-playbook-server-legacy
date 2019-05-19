@@ -19,5 +19,9 @@
   with_items: "{{ required_packages_dev }}"
 
 - name: Ensure package needed for Django (pillow) is present
+  apt: name=libpng-dev state=present
+  when: not ubuntu_16
+
+- name: Ensure package needed for Django (pillow) is present (For ubuntu 16.04)
   apt: name=libpng12-dev state=present
-  when: not desktop
+  when: ubuntu_16

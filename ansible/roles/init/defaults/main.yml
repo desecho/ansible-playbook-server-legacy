@@ -11,8 +11,7 @@ required_packages:
   - unattended-upgrades  # Make sure we get security updates automatically
   - htop  # For monitoring
   - iftop  # For monitoring
-  - software-properties-common  # To install python 3.6
-  - python-software-properties  # To install python 3.6
+  - software-properties-common  # To install python 3
   - libjpeg-dev # pillow
   - gettext
 
@@ -28,3 +27,4 @@ is_prod: no
 is_dev: no
 install_python_3: yes
 desktop: no
+ubuntu_16: no
