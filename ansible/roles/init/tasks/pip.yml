@@ -9,7 +9,14 @@
     - pdbpp
     - virtualenv
     - six
+
+- name: Install/Upgrade global pip packages
+  pip:
+    name: "{{ item }}"
+    extra_args: --upgrade
+  with_items:
     - unify
+  when: is_dev
 
 - name: Install/Upgrade global pip packages for development
   pip:
