@@ -18,6 +18,6 @@
   with_items:
     - tox
     - isort
-    - black
+    - yapf
     - autoflake
   when: is_dev
