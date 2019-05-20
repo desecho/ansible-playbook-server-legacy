@@ -9,6 +9,7 @@
     - pdbpp
     - virtualenv
     - six
+    - unify
 
 - name: Install/Upgrade global pip packages for development
   pip:

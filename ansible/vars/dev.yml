@@ -2,3 +2,4 @@ is_dev: yes
 home: /home/desecho
 user: desecho
 django_python3exec: python3.7
+install_python_3_7: yes

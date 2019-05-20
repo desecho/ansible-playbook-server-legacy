@@ -25,6 +25,6 @@ enabled_services:
 timezone: US/Eastern
 is_prod: no
 is_dev: no
-install_python_3: yes
+install_python_3_7: no
 desktop: no
 ubuntu_16: no

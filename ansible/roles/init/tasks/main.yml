@@ -1,6 +1,8 @@
 - include: packages.yml
+- include: python36.yml
+  when: not install_python_3_7
 - include: python37.yml
-  when: install_python_3
+  when: install_python_3_7
 - include: scripts.yml
 - include: configs.yml
 - include: pip.yml
