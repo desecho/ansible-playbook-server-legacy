@@ -1,5 +1,5 @@
 mysql_user_password: "{{ mysql_root_password }}"
-email: movies@desecho.org
+email: desecho@gmail.com
 django_fixtures_to_load:
   - moviesapp/fixtures/lists.json
   - moviesapp/fixtures/actions.json
