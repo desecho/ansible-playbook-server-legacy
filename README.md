@@ -129,7 +129,24 @@ Reconnect to the server
 provisionall
 ```
 
-Install [Grive][Grive]. The process is described [here](https://blog.desecho.org/?#toc_516).
+Install [Dropbox Uploader][Dropbox Uploader].
+
+```bash
+curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh" -o /usr/bin/dropbox_uploader.sh
+chmod +x /usr/bin/dropbox_uploader.sh
+```
+
+Open https://www.dropbox.com/developers/apps
+Click "Create app"
+Select Dropbox API
+Select App folder
+Enter `BackupDesecho` as a name
+Generated access token
+Run `dropbox_uploader.sh`
+Enter access token
+```bash
+dropbox_uploader.sh mkdir Backups
+```
 
 Desktop
 -------------
@@ -239,7 +256,7 @@ Drawbacks
 [ansible-role-mysql]: https://github.com/geerlingguy/ansible-role-mysql
 [Fail2ban]: https://www.fail2ban.org/
 [MySQL]: https://www.mysql.com/
-[Grive]: https://github.com/Grive/grive
+[Deopbox Uploader]: https://github.com/andreafabrizi/Dropbox-Uploader
 [Google Drive]: https://drive.google.com
 [ansible-role-nodejs]: https://github.com/geerlingguy/ansible-role-nodejs
 [ipdb]: https://github.com/gotcha/ipdb
