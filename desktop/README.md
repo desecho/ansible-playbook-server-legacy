@@ -11,7 +11,7 @@ In the configuration bar:
 * Select Devices -> Shared clipboard -> Bidirectional
 
 Open VM settings
-* User Interface -> Uncheck Show in Full-screen/Seamless
+* User Interface -> Uncheck Show in Full-screen/Seamless  
 * Display -> Set Monitor count to 2
 * Display -> Set Video Memory to 128MB
 * Display -> Enable 3D Acceleration, Enable 2D Acceleration
@@ -21,13 +21,13 @@ Open VM settings
 sudo echo "desecho ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 sudo apt-get install gcc make perl gnome-tweak-tool ssh gnome-shell-extension-dash-to-panel git dconf-tools -y
 ```
-Remove Help, Ubuntu software and Settings from the dock.
+Remove Help, Ubuntu software and Settings from the dock. Press [Alt + F2] and enter `restart`
 Run Tweaks
 * Disable animations
 * Extensions -> Enable Dash to panel
-Keyboard -> Typing -> Switch to next input source -> Ctrl + Space
-Run dconf-editor
-Head to org -> gnome -> desktop -> interface -> cursor-size -> Set to 10
+Keyboard -> Typing -> Switch to next input source -> Ctrl + Space  
+Run dconf-editor  
+Head to org -> gnome -> desktop -> interface -> cursor-size -> Set to 10  
 
 Install VS Code - https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
 
