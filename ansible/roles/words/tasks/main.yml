@@ -1,5 +1,2 @@
-- include: cron_scripts.yml
-  when: is_prod
-
-- include: cron.yml
-  when: is_prod
+- name: Ensure Hunspell requirement is installed
+  apt: "name=libhunspell-dev state=present"
