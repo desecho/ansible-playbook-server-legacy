@@ -1,0 +1,2 @@
+- name: Ensure Hunspell requirement is installed
+  apt: "name=libhunspell-dev state=present"

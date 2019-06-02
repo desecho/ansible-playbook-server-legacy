@@ -1,0 +1,3 @@
+django_domain_name: "{{ django_name }}.desecho.org"
+django_debug: no
+domain_name: "{{ django_domain_name }}"

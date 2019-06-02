@@ -1,0 +1,14 @@
+mysql_user_password: "{{ mysql_root_password }}"
+email: desecho@gmail.com
+django_name: words
+
+django_project_symlink_dest: "{{ home }}/{{ django_name }}"
+
+django_project_name: "{{ django_name }}"
+django_env_settings_extra: |
+  RAVEN_DSN = '{{ raven_dsn }}'
+
+  ADMIN_EMAIL = '{{ email }}'
+  INTERNAL_IPS = []
+
+yarn: yes

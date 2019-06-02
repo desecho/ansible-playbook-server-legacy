@@ -1,0 +1,19 @@
+- name: Install a fully functional uWSGI/nginx server for Django deployment on production. Words Project.
+  hosts: localhost
+
+  vars_files:
+      - vars/prod.yml
+      - vars/common.yml
+      - vars/words_prod_secrets.yml
+      - vars/words.yml
+      - vars/words_prod.yml
+      - vars/site.yml
+      - vars/django.yml
+
+  roles:
+    - nodejs
+    - role: mysql
+      become: yes
+    - acme-nginx
+    - django
+    - words

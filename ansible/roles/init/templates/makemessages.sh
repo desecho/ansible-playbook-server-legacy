@@ -9,8 +9,8 @@ source /opt/$1/env/bin/activate
 cd /opt/$1/project/src
 ./manage.py makemessages
 
-if [ $1 = "movies" ]; then
-   ./manage.py makemessages -d djangojs --ignore=moviesapp/static/* --ignore=node_modules/*
+if [ $1 = "movies" ] || [ $1 = "words" ]; then
+   ./manage.py makemessages -d djangojs --ignore=$1app/static/* --ignore=node_modules/*
    exit 0
 fi
 

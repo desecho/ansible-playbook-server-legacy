@@ -23,6 +23,7 @@ It installs htop and iftop to monitor through CLI.
 
 It is currently used to provision the following projects:
 * [Movies][Movies]
+* [Words][Words]
 * [IT Blog][IT Blog]
 * [desecho.org][desecho.org]
 * [GitHub Contrib][Githubcontrib]
@@ -158,6 +159,7 @@ Usage
 # Full provisioning of each service
 provision init
 provision movies
+provision words
 provision site
 provision blog
 provision ghcontrib
@@ -240,6 +242,7 @@ Drawbacks
     * It breaks the server for some time while provisioning.
 
 [Movies]: https://github.com/desecho/movies
+[Words]: https://github.com/desecho/words
 [Let’s Encrypt]: https://letsencrypt.org/
 [ansible-nginx]: https://github.com/savoirfairelinux/ansible-nginx
 [Django]: https://www.djangoproject.com/

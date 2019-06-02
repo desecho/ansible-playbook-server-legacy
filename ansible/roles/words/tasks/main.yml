@@ -1,0 +1,5 @@
+- include: cron_scripts.yml
+  when: is_prod
+
+- include: cron.yml
+  when: is_prod
