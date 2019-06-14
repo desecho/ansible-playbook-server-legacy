@@ -29,6 +29,10 @@ Keyboard -> Typing -> Switch to next input source -> Ctrl + Space
 Run dconf-editor  
 Head to org -> gnome -> desktop -> interface -> cursor-size -> Set to 10  
 
+Disable screen locking
+Settings -> Privacy -> Screen Lock -> Off  
+Power -> Blank screen -> Never  
+
 Install VS Code - https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
 
 ### Provisioning
